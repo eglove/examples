@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-autofocus */
 'use client';
 import { JSX, useEffect, useRef, useState } from 'react';
 
@@ -79,7 +78,6 @@ export default function Main(): JSX.Element {
         >
           <div>
             <button
-              autoFocus
               className="m-2 bg-blue-500 p-2 text-white"
               ref={buttonReference}
               type="button"
