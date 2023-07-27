@@ -80,6 +80,11 @@ export default class MainClass extends Component {
         </div>
         {this.state.isDialogOpen && (
           <div
+              onKeyUp={(event): void => {
+                if (event.key === 'Escape') {
+                  this.handleToggleDialog();
+                }
+              }}
             className="absolute right-1/2 top-1/2 z-10 border-2 bg-white p-2"
             ref={this.modalContainerRef}
           >
