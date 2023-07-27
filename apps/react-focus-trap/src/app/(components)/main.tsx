@@ -48,12 +48,10 @@ export default function Main(): JSX.Element {
           ref={enterReference}
           role="link"
           tabIndex={0}
-          onClick={(event): void => {
-            event.stopPropagation();
+          onClick={(): void => {
             handleToggleDialog(true);
           }}
           onKeyUp={(event): void => {
-            event.stopPropagation();
             if (event.key === 'Enter') {
               handleToggleDialog(true);
             }
@@ -81,12 +79,10 @@ export default function Main(): JSX.Element {
               className="m-2 bg-blue-500 p-2 text-white"
               ref={buttonReference}
               type="button"
-              onClick={(event): void => {
-                event.stopPropagation();
+              onClick={(): void => {
                 handleToggleDialog(false);
               }}
-              onKeyDown={(event): void => {
-                event.stopPropagation();
+              onKeyUp={(event): void => {
                 if (event.key === 'Enter') {
                   handleToggleDialog(false);
                 }

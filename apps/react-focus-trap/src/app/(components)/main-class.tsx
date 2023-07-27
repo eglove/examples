@@ -57,12 +57,10 @@ export default class MainClass extends Component {
             ref={this.enterRef}
             role="link"
             tabIndex={0}
-            onClick={(event): void => {
-              event.stopPropagation();
+            onClick={(): void => {
               this.handleToggleDialog();
             }}
             onKeyUp={(event): void => {
-              event.stopPropagation();
               if (event.key === 'Enter') {
                 this.handleToggleDialog();
               }
@@ -90,12 +88,10 @@ export default class MainClass extends Component {
                 className="m-2 bg-blue-500 p-2 text-white"
                 ref={this.buttonRef}
                 type="button"
-                onClick={(event): void => {
-                  event.stopPropagation();
+                onClick={(): void => {
                   this.handleToggleDialog();
                 }}
                 onKeyDown={(event): void => {
-                  event.stopPropagation();
                   if (event.key === 'Enter') {
                     this.handleToggleDialog();
                   }
