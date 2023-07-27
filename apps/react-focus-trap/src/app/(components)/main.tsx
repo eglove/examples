@@ -18,6 +18,7 @@ export default function Main(): JSX.Element {
   };
 
   useEffect(() => {
+    // @ts-expect-error typescript being odd
     let timeoutId: Timeout;
 
     if (isDialogOpen) {
