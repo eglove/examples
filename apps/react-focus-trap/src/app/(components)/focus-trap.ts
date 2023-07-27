@@ -4,10 +4,9 @@ export function focusTrap(element: HTMLElement): void {
   );
   const firstFocusableElement = focusableEls[0];
   const lastFocusableElement = focusableEls[focusableEls.length - 1];
-  const KEYCODE_TAB = '9';
 
   element.addEventListener('keydown', event => {
-    const isTabPressed = event.key === 'Tab' || event.key === KEYCODE_TAB;
+    const isTabPressed = event.key === 'Tab';
 
     if (!isTabPressed) {
       return;

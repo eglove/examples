@@ -4,8 +4,8 @@ import { Component, createRef, ReactNode } from 'react';
 import { focusTrap } from '@/app/(components)/focus-trap';
 
 export default class MainClass extends Component {
-  containerRef = createRef<HTMLDivElement>();
-  buttonRef = createRef<HTMLButtonElement>();
+  modalContainerRef = createRef<HTMLDivElement>();
+  closeButtonRef = createRef<HTMLButtonElement>();
   enterRef = createRef<HTMLDivElement>();
 
   state = {
@@ -13,9 +13,9 @@ export default class MainClass extends Component {
   };
 
   handleTrapFocus = (): void => {
-    if (this.containerRef.current) {
-      this.buttonRef.current?.focus();
-      focusTrap(this.containerRef.current);
+    if (this.modalContainerRef.current) {
+      this.closeButtonRef.current?.focus();
+      focusTrap(this.modalContainerRef.current);
     }
   };
 
@@ -36,7 +36,7 @@ export default class MainClass extends Component {
         if (this.state.isDialogOpen) {
           this.handleTrapFocus();
         } else {
-          setTimeout(this.handleEnterRefFocus, 100);
+          this.handleEnterRefFocus();
         }
       },
     );
@@ -57,13 +57,13 @@ export default class MainClass extends Component {
             ref={this.enterRef}
             role="link"
             tabIndex={0}
-            onClick={(): void => {
-              this.handleToggleDialog();
-            }}
             onKeyUp={(event): void => {
               if (event.key === 'Enter') {
                 this.handleToggleDialog();
               }
+            }}
+            onMouseUp={(): void => {
+              this.handleToggleDialog();
             }}
           >
             Press enter!
@@ -81,20 +81,20 @@ export default class MainClass extends Component {
         {this.state.isDialogOpen && (
           <div
             className="absolute right-1/2 top-1/2 z-10 border-2 bg-white p-2"
-            ref={this.containerRef}
+            ref={this.modalContainerRef}
           >
             <div>
               <button
                 className="m-2 bg-blue-500 p-2 text-white"
-                ref={this.buttonRef}
+                ref={this.closeButtonRef}
                 type="button"
-                onClick={(): void => {
-                  this.handleToggleDialog();
-                }}
-                onKeyDown={(event): void => {
+                onKeyUp={(event): void => {
                   if (event.key === 'Enter') {
                     this.handleToggleDialog();
                   }
+                }}
+                onMouseUp={(): void => {
+                  this.handleToggleDialog();
                 }}
               >
                 Close me!

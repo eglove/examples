@@ -10,28 +10,21 @@ export default function Main(): JSX.Element {
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>();
 
-  const handleToggleDialog = (isOpen: boolean): void => {
-    setIsDialogOpen(isOpen);
+  const handleToggleDialog = (): void => {
+    setIsDialogOpen(isDialogOpen_ => {
+      return !isDialogOpen_;
+    });
   };
 
   useEffect(() => {
-    // @ts-expect-error typescript being odd
-    let timeoutId: Timeout;
-
     if (isDialogOpen === true) {
       if (containerReference.current) {
         buttonReference.current?.focus();
         focusTrap(containerReference.current);
       }
     } else if (isDialogOpen === false) {
-      timeoutId = setTimeout((): void => {
-        return enterReference.current?.focus();
-      }, 100);
+      enterReference.current?.focus();
     }
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
   }, [isDialogOpen]);
 
   return (
@@ -48,13 +41,13 @@ export default function Main(): JSX.Element {
           ref={enterReference}
           role="link"
           tabIndex={0}
-          onClick={(): void => {
-            handleToggleDialog(true);
-          }}
           onKeyUp={(event): void => {
             if (event.key === 'Enter') {
-              handleToggleDialog(true);
+              handleToggleDialog();
             }
+          }}
+          onMouseUp={(): void => {
+            handleToggleDialog();
           }}
         >
           Press enter!
@@ -70,22 +63,28 @@ export default function Main(): JSX.Element {
         </div>
       </div>
       {isDialogOpen && (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
           className="absolute right-1/2 top-1/2 z-10 border-2 bg-white p-2"
           ref={containerReference}
+          onKeyUp={(event): void => {
+            if (event.key === 'Escape') {
+              handleToggleDialog();
+            }
+          }}
         >
           <div>
             <button
               className="m-2 bg-blue-500 p-2 text-white"
               ref={buttonReference}
               type="button"
-              onClick={(): void => {
-                handleToggleDialog(false);
-              }}
               onKeyUp={(event): void => {
                 if (event.key === 'Enter') {
-                  handleToggleDialog(false);
+                  handleToggleDialog();
                 }
+              }}
+              onMouseUp={(): void => {
+                handleToggleDialog();
               }}
             >
               Close me!
