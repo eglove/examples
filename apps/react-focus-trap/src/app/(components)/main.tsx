@@ -9,24 +9,22 @@ export default function Main(): JSX.Element {
   const buttonReference = useRef<HTMLButtonElement>(null);
   const enterReference = useRef<HTMLDivElement>(null);
 
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>();
 
-  const handleToggleDialog = (): void => {
-    setIsDialogOpen(isDialogOpen_ => {
-      return !isDialogOpen_;
-    });
+  const handleToggleDialog = (isOpen: boolean): void => {
+    setIsDialogOpen(isOpen);
   };
 
   useEffect(() => {
     // @ts-expect-error typescript being odd
     let timeoutId: Timeout;
 
-    if (isDialogOpen) {
+    if (isDialogOpen === true) {
       if (containerReference.current) {
         buttonReference.current?.focus();
         focusTrap(containerReference.current);
       }
-    } else {
+    } else if (isDialogOpen === false) {
       timeoutId = setTimeout((): void => {
         return enterReference.current?.focus();
       }, 100);
@@ -53,12 +51,12 @@ export default function Main(): JSX.Element {
           tabIndex={0}
           onClick={(event): void => {
             event.stopPropagation();
-            handleToggleDialog();
+            handleToggleDialog(true);
           }}
           onKeyUp={(event): void => {
             event.stopPropagation();
             if (event.key === 'Enter') {
-              handleToggleDialog();
+              handleToggleDialog(true);
             }
           }}
         >
@@ -87,12 +85,12 @@ export default function Main(): JSX.Element {
               type="button"
               onClick={(event): void => {
                 event.stopPropagation();
-                handleToggleDialog();
+                handleToggleDialog(false);
               }}
               onKeyDown={(event): void => {
                 event.stopPropagation();
                 if (event.key === 'Enter') {
-                  handleToggleDialog();
+                  handleToggleDialog(false);
                 }
               }}
             >
@@ -104,7 +102,6 @@ export default function Main(): JSX.Element {
           </button>
         </div>
       )}
-      <p>Is Open: {isDialogOpen}</p>
     </div>
   );
 }
