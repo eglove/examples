@@ -8,7 +8,7 @@ export default function Main(): JSX.Element {
   const buttonReference = useRef<HTMLButtonElement>(null);
   const enterReference = useRef<HTMLDivElement>(null);
 
-  const [isDialogOpen, setIsDialogOpen] = useState<boolean>();
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
   const handleToggleDialog = (): void => {
     setIsDialogOpen(isDialogOpen_ => {
@@ -17,12 +17,12 @@ export default function Main(): JSX.Element {
   };
 
   useEffect(() => {
-    if (isDialogOpen === true) {
+    if (isDialogOpen) {
       if (containerReference.current) {
         buttonReference.current?.focus();
         focusTrap(containerReference.current);
       }
-    } else if (isDialogOpen === false) {
+    } else if (!isDialogOpen) {
       enterReference.current?.focus();
     }
   }, [isDialogOpen]);

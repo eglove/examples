@@ -13,7 +13,7 @@ export function focusTrap(element: HTMLElement): void {
     }
 
     if (event.shiftKey) {
-      /* shift + tab */ if (document.activeElement === firstFocusableElement) {
+      if (document.activeElement === firstFocusableElement) {
         if ('focus' in lastFocusableElement) {
           // @ts-expect-error moving
           lastFocusableElement.focus();
@@ -21,7 +21,7 @@ export function focusTrap(element: HTMLElement): void {
 
         event.preventDefault();
       }
-    } /* tab */ else if (document.activeElement === lastFocusableElement) {
+    } else if (document.activeElement === lastFocusableElement) {
       if ('focus' in firstFocusableElement) {
         // @ts-expect-error moving
         firstFocusableElement.focus();

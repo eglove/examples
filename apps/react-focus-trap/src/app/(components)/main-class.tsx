@@ -29,6 +29,7 @@ export default class MainClass extends Component {
         return {
           ...previousState,
           // @ts-expect-error ts doesn't get class components
+          // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
           isDialogOpen: !previousState.isDialogOpen,
         };
       },
@@ -79,14 +80,15 @@ export default class MainClass extends Component {
           </div>
         </div>
         {this.state.isDialogOpen && (
+          // eslint-disable-next-line jsx-a11y/no-static-element-interactions
           <div
-              onKeyUp={(event): void => {
-                if (event.key === 'Escape') {
-                  this.handleToggleDialog();
-                }
-              }}
             className="absolute right-1/2 top-1/2 z-10 border-2 bg-white p-2"
             ref={this.modalContainerRef}
+            onKeyUp={(event): void => {
+              if (event.key === 'Escape') {
+                this.handleToggleDialog();
+              }
+            }}
           >
             <div>
               <button
