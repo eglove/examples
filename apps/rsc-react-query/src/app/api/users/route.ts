@@ -9,6 +9,10 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       ? 'https://jsonplaceholder.typicode.com/users/'
       : `https://jsonplaceholder.typicode.com/users/${id}`;
 
+  await new Promise(resolve => {
+    setTimeout(resolve, 3000);
+  });
+
   const response = await fetch(url);
 
   return NextResponse.json(await response.json());

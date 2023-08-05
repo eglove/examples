@@ -11,6 +11,9 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       ? 'https://jsonplaceholder.typicode.com/posts/'
       : `https://jsonplaceholder.typicode.com/posts/${id}`;
 
+  await new Promise(resolve => {
+    setTimeout(resolve, 5000);
+  });
   const response = await fetch(url);
 
   return NextResponse.json(await response.json());
