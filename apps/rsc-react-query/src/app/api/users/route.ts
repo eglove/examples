@@ -6,8 +6,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
   const url =
     id === null
-      ? 'https://jsonplaceholder.typicode.com/posts/'
-      : `https://jsonplaceholder.typicode.com/posts/${searchParams.get('id')}`;
+      ? 'https://jsonplaceholder.typicode.com/users/'
+      : `https://jsonplaceholder.typicode.com/users/${searchParams.get('id')}`;
 
   const response = await fetch(url);
 

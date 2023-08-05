@@ -18,4 +18,10 @@ export const apiGet = {
   posts(): Request {
     return new Request(`${ROOT_URL}/api/posts`);
   },
+  user(id: string): Request {
+    return new Request(`${ROOT_URL}/api/users?id=${id}`);
+  },
+  users(): Request {
+    return new Request(`${ROOT_URL}/api/users`);
+  },
 };

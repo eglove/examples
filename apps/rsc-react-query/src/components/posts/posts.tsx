@@ -4,7 +4,7 @@ import { PostsData } from './posts-data';
 
 export function Posts(): ReactNode {
   return (
-    <Suspense fallback="Posts Loading...">
+    <Suspense fallback={<div>Posts Loading...</div>}>
       <PostsData />
     </Suspense>
   );
