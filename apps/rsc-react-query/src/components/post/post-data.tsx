@@ -3,7 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 
-import { apiGet, getRequestKeys } from '../../app/api/api';
+import { api, getRequestKeys } from '../../app/api/api';
 import { postSchema } from '../../app/api/types';
 import { PostView } from './post-view';
 
@@ -14,10 +14,10 @@ type PostsDataProperties = {
 export function PostData({ id }: PostsDataProperties): ReactNode {
   const { data } = useQuery({
     async queryFn() {
-      const response = await fetch(apiGet.post(id));
+      const response = await fetch(api.post(id));
       return postSchema.parse(await response.json());
     },
-    queryKey: getRequestKeys(apiGet.post(id)),
+    queryKey: getRequestKeys(api.post(id)),
     suspense: true,
   });
 

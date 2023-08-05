@@ -11,7 +11,13 @@ export const getRequestKeys = (request: Request): string[] => {
   return keys;
 };
 
-export const apiGet = {
+export const api = {
+  createPost(title: string, body: string): Request {
+    return new Request(`${ROOT_URL}/api/posts`, {
+      body: JSON.stringify({ body, title }),
+      method: 'POST',
+    });
+  },
   post(id: string): Request {
     return new Request(`${ROOT_URL}/api/posts?id=${id}`);
   },

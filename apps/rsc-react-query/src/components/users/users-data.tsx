@@ -3,17 +3,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 
-import { apiGet, getRequestKeys } from '../../app/api/api';
+import { api, getRequestKeys } from '../../app/api/api';
 import { usersSchema } from '../../app/api/types';
 import { UsersView } from './users-view';
 
 export function UsersData(): ReactNode {
   const { data } = useQuery({
     async queryFn() {
-      const response = await fetch(apiGet.users());
+      const response = await fetch(api.users());
       return usersSchema.parse(await response.json());
     },
-    queryKey: getRequestKeys(apiGet.users()),
+    queryKey: getRequestKeys(api.users()),
     suspense: true,
   });
 

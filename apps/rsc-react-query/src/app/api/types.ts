@@ -7,6 +7,11 @@ export const postSchema = z.object({
   userId: z.number(),
 });
 
+export const postBodySchema = z.object({
+  body: z.string(),
+  title: z.string(),
+});
+
 export type Post = z.output<typeof postSchema>;
 
 export const postsSchema = z.array(postSchema);

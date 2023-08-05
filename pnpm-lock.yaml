@@ -57,6 +57,9 @@ importers:
 
   apps/rsc-react-query:
     dependencies:
+      '@ethang/use-form':
+        specifier: ^1.4.6
+        version: 1.4.6(react@18.2.0)(zod@3.21.4)
       '@tanstack/react-query':
         specifier: ^4.32.6
         version: 4.32.6(react-dom@18.2.0)(react@18.2.0)
@@ -193,6 +196,16 @@ packages:
   /@eslint/js@8.46.0:
     resolution: {integrity: sha512-a8TLtmPi8xzPkCbp/OGFUo5yhRkHM2Ko9kOWP4znJr0WAhWyThaw3PnwX4vOTWOAMsV2uRt32PPDcEz63esSaA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  /@ethang/use-form@1.4.6(react@18.2.0)(zod@3.21.4):
+    resolution: {integrity: sha512-PDaiUURySR8ue3sDA8E89ipj9Z4PuEXlvuP30ZzH4NnxYRIdgBo4Qj9qmxQ3XoUtWtj0DFDcMrt9R/Qfq8PyRA==}
+    peerDependencies:
+      react: ^18.2.0
+      zod: ^3.21.4
+    dependencies:
+      react: 18.2.0
+      zod: 3.21.4
+    dev: false
 
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}

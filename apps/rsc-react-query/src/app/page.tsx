@@ -1,12 +1,16 @@
 import { ReactNode } from 'react';
 
+import { CreatePost } from '../components/create-post/create-post';
 import { Posts } from '../components/posts/posts';
 import { Users } from '../components/users/users';
 
 export default function Home(): ReactNode {
   return (
     <main className="grid w-full grid-cols-2 justify-evenly">
-      <Posts />
+      <div>
+        <CreatePost />
+        <Posts />
+      </div>
       <Users />
     </main>
   );

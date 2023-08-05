@@ -3,7 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 
-import { apiGet, getRequestKeys } from '../../app/api/api';
+import { api, getRequestKeys } from '../../app/api/api';
 import { userSchema } from '../../app/api/types';
 import { UserView } from './user-view';
 
@@ -14,10 +14,10 @@ type UserDataProperties = {
 export function UserData({ id }: UserDataProperties): ReactNode {
   const { data } = useQuery({
     async queryFn() {
-      const response = await fetch(apiGet.user(id));
+      const response = await fetch(api.user(id));
       return userSchema.parse(await response.json());
     },
-    queryKey: getRequestKeys(apiGet.user(id)),
+    queryKey: getRequestKeys(api.user(id)),
     suspense: true,
   });
 
