@@ -34,56 +34,20 @@ class RewardServiceTests {
 
     @Test
     void getTotalSpentByCustomerInLastThreeMonthsTest() {
-        var customer1 = new Customer();
-        customer1.setId(1L);
-        customer1.setEmail("customer1@example.com");
+        var customer1 = createCustomer(1L, "customer1@example.com");
+        var customer2 = createCustomer(2L, "customer2@example.com");
+        var customer3 = createCustomer(3L, "customer3@example.com");
 
-        var customer2 = new Customer();
-        customer2.setId(2L);
-        customer2.setEmail("customer2@example.com");
+        mockCustomers(List.of(customer1, customer2, customer3));
 
-        var customer3= new Customer();
-        customer3.setId(3L);
-        customer3.setEmail("customer3@example.com");
+        var transaction1 = createTransaction(customer1, 150.0);
+        var transaction2 = createTransaction(customer1, 52.0);
+        var transaction3 = createTransaction(customer2, 120.0);
+        var transaction4 = createTransaction(customer3, 57.0);
 
-        var customers = List.of(customer1, customer2, customer3);
-
-        when(customerRepository.findAll()).thenReturn(customers);
-
-        var transaction1 = new Transaction();
-        transaction1.setCustomer(customer1);
-        transaction1.setPurchaseAmount(150.0);
-        transaction1.setCreatedAt(new Date());
-
-        var transaction2 = new Transaction();
-        transaction2.setCustomer(customer1);
-        transaction2.setPurchaseAmount(52.0);
-        transaction2.setCreatedAt(new Date());
-
-        var transaction3 = new Transaction();
-        transaction3.setCustomer(customer2);
-        transaction3.setPurchaseAmount(120.0);
-        transaction3.setCreatedAt(new Date());
-
-        var transaction4 = new Transaction();
-        transaction4.setCustomer(customer3);
-        transaction4.setPurchaseAmount(57.0);
-        transaction4.setUpdatedAt(new Date());
-
-        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
-                eq(customer1.getId()),
-                any(Date.class))
-        ).thenReturn(List.of(transaction1, transaction2));
-
-        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
-                eq(customer2.getId()),
-                any(Date.class))
-        ).thenReturn(List.of(transaction3));
-
-        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
-                eq(customer3.getId()),
-                any(Date.class))
-        ).thenReturn(List.of(transaction4));
+        mockTransactions(List.of(transaction1, transaction2), customer1);
+        mockTransactions(List.of(transaction3), customer2);
+        mockTransactions(List.of(transaction4), customer3);
 
         var totals = rewardService.getTotalSpentByCustomerInLastThreeMonths();
 
@@ -127,5 +91,31 @@ class RewardServiceTests {
         );
 
         assertEquals("Database Error", exception.getMessage());
+    }
+
+    private Customer createCustomer(Long id, String email) {
+        Customer customer = new Customer();
+        customer.setId(id);
+        customer.setEmail(email);
+        return customer;
+    }
+
+    private Transaction createTransaction(Customer customer, double amount) {
+        Transaction transaction = new Transaction();
+        transaction.setCustomer(customer);
+        transaction.setPurchaseAmount(amount);
+        transaction.setCreatedAt(new Date());
+        return transaction;
+    }
+
+    private void mockCustomers(List<Customer> customers) {
+        when(customerRepository.findAll()).thenReturn(customers);
+    }
+
+    private void mockTransactions(List<Transaction> transactions, Customer customer) {
+        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
+                eq(customer.getId()),
+                any(Date.class))
+        ).thenReturn(transactions);
     }
 }
