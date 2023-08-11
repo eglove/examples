@@ -4,6 +4,9 @@ GET http://localhost:8080/customers
 ### Get customer by email
 GET http://localhost:8080/customer?email=Email9@domain.com
 
+### Get customer points
+GET http://localhost:8080/transactions
+
 ### Create a new customer
 POST http://localhost:8080/customers
 Content-Type: application/json
