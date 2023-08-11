@@ -42,33 +42,38 @@ class RewardServiceTests {
         customer2.setId(2L);
         customer2.setEmail("customer2@example.com");
 
-        var customers = Arrays.asList(customer1, customer2);
+        var customers = List.of(customer1, customer2);
 
         when(customerRepository.findAll()).thenReturn(customers);
 
         var transaction1 = new Transaction();
         transaction1.setCustomer(customer1);
-        transaction1.setPurchaseAmount(200.0);
+        transaction1.setPurchaseAmount(150.0);
         transaction1.setCreatedAt(new Date());
 
         var transaction2 = new Transaction();
-        transaction2.setCustomer(customer2);
-        transaction2.setPurchaseAmount(120.0);
+        transaction2.setCustomer(customer1);
+        transaction2.setPurchaseAmount(50.0);
         transaction2.setCreatedAt(new Date());
+
+        var transaction3 = new Transaction();
+        transaction3.setCustomer(customer2);
+        transaction3.setPurchaseAmount(120.0);
+        transaction3.setCreatedAt(new Date());
 
         when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
                 eq(customer1.getId()),
                 any(Date.class))
-        ).thenReturn(Collections.singletonList(transaction1));
+        ).thenReturn(List.of(transaction1, transaction2));
 
         when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(
                 eq(customer2.getId()),
                 any(Date.class))
-        ).thenReturn(Collections.singletonList(transaction2));
+        ).thenReturn(List.of(transaction3));
 
         var totals = rewardService.getTotalSpentByCustomerInLastThreeMonths();
 
-        assertEquals(250, totals.get("customer1@example.com").intValue());
+        assertEquals(200, totals.get("customer1@example.com").intValue());
         assertEquals(90, totals.get("customer2@example.com").intValue());
     }
 

@@ -39,8 +39,8 @@ public class RewardService {
                 if (purchaseAmount > 100) {
                     totalPoints += 2 * (purchaseAmount - 100);
                     totalPoints += 50;
-                } else if (purchaseAmount > 50) {
-                    totalPoints += purchaseAmount - 50;
+                } else if (purchaseAmount >= 50) {
+                    totalPoints += purchaseAmount;
                 }
             }
 
