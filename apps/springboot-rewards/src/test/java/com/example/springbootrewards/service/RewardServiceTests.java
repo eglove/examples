@@ -67,13 +67,10 @@ class RewardServiceTests {
 
     @Test
     void testGetTotalSpentByCustomerInLastThreeMonths_CustomersExistButNoTransactions() {
-        Customer customer1 = new Customer();
-        customer1.setId(1L);
-        customer1.setEmail("test@example.com");
+        var customer = createCustomer(1L, "test@example.com");
 
-        when(customerRepository.findAll()).thenReturn(List.of(customer1));
-        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(eq(customer1.getId()),
-                any(Date.class))).thenReturn(Collections.emptyList());
+        mockCustomers(List.of(customer));
+        mockTransactions(Collections.emptyList(), customer);
 
         var totalSpentMap = rewardService.getTotalSpentByCustomerInLastThreeMonths();
 
@@ -86,7 +83,7 @@ class RewardServiceTests {
     void testGetTotalSpentByCustomerInLastThreeMonths_ExceptionThrown() {
         when(customerRepository.findAll()).thenThrow(new RuntimeException("Database Error"));
 
-        Exception exception = assertThrows(RuntimeException.class, () ->
+        var exception = assertThrows(RuntimeException.class, () ->
                 rewardService.getTotalSpentByCustomerInLastThreeMonths()
         );
 
