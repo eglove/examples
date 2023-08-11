@@ -13,16 +13,15 @@ import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
-public class TransactionServiceTests {
+class RewardServiceTests {
     @InjectMocks
-    TransactionService transactionService;
+    RewardService rewardService;
 
     @Mock
     ICustomerRepository customerRepository;
@@ -69,7 +68,7 @@ public class TransactionServiceTests {
                 any(Date.class))
         ).thenReturn(Collections.singletonList(transaction2));
 
-        var totals = transactionService.getTotalSpentByCustomerInLastThreeMonths();
+        var totals = rewardService.getTotalSpentByCustomerInLastThreeMonths();
 
         assertEquals(250, totals.get("customer1@example.com").intValue());
         assertEquals(90, totals.get("customer2@example.com").intValue());

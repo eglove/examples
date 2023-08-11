@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class TransactionService {
+public class RewardService {
     @Autowired
     private final ICustomerRepository customerRepository;
     @Autowired
     private final ITransactionRepository transactionRepository;
 
-    public TransactionService(ICustomerRepository customerRepository, ITransactionRepository transactionRepository) {
+    public RewardService(ICustomerRepository customerRepository, ITransactionRepository transactionRepository) {
         this.customerRepository = customerRepository;
         this.transactionRepository = transactionRepository;
     }
