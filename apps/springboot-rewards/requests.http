@@ -1,0 +1,15 @@
+### Get all customers
+GET http://localhost:8080/customers
+
+### Get customer by email
+GET http://localhost:8080/customer?email=Email9@domain.com
+
+### Create a new customer
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "firstName": "Ethan",
+  "lastName": "Glover",
+  "email": "hello@ethang.email"
+}
