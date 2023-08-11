@@ -10,11 +10,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
+import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
@@ -72,5 +70,42 @@ class RewardServiceTests {
 
         assertEquals(250, totals.get("customer1@example.com").intValue());
         assertEquals(90, totals.get("customer2@example.com").intValue());
+    }
+
+    @Test
+    void testGetTotalSpentByCustomerInLastThreeMonths_NoCustomers() {
+        when(customerRepository.findAll()).thenReturn(Collections.emptyList());
+
+        Map<String, Integer> totalSpentMap = rewardService.getTotalSpentByCustomerInLastThreeMonths();
+
+        assertTrue(totalSpentMap.isEmpty());
+    }
+
+    @Test
+    void testGetTotalSpentByCustomerInLastThreeMonths_CustomersExistButNoTransactions() {
+        Customer customer1 = new Customer();
+        customer1.setId(1L);
+        customer1.setEmail("test@example.com");
+
+        when(customerRepository.findAll()).thenReturn(List.of(customer1));
+        when(transactionRepository.findAllByCustomer_IdAndCreatedAtAfter(eq(customer1.getId()),
+                any(Date.class))).thenReturn(Collections.emptyList());
+
+        var totalSpentMap = rewardService.getTotalSpentByCustomerInLastThreeMonths();
+
+        assertEquals(1, totalSpentMap.size());
+        assertTrue(totalSpentMap.containsKey("test@example.com"));
+        assertEquals(0, totalSpentMap.get("test@example.com"));
+    }
+
+    @Test
+    void testGetTotalSpentByCustomerInLastThreeMonths_ExceptionThrown() {
+        when(customerRepository.findAll()).thenThrow(new RuntimeException("Database Error"));
+
+        Exception exception = assertThrows(RuntimeException.class, () ->
+                rewardService.getTotalSpentByCustomerInLastThreeMonths()
+        );
+
+        assertEquals("Database Error", exception.getMessage());
     }
 }
