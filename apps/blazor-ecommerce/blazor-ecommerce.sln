@@ -1,0 +1,14 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-ecommerce.Server", "blazor-ecommerce\Server\blazor-ecommerce.Server.csproj", "{66160F46-3199-4F44-B2DF-6A98C9A89BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-ecommerce.Client", "blazor-ecommerce\Client\blazor-ecommerce.Client.csproj", "{6F54162C-5066-494E-BC62-3A04DC7A6F3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-ecommerce.Shared", "blazor-ecommerce\Shared\blazor-ecommerce.Shared.csproj", "{4B99F3AA-B3B2-476B-B44D-ACD8396F3264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+EndGlobal
