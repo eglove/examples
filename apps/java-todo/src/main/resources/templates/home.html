@@ -1,0 +1,34 @@
+<div th:include="header"></div>
+<h1 th:text="${title}"></h1>
+<script>
+    window.onload = function() {
+        const button = document.querySelector('#delete-button');
+        button.addEventListener('click', () => {
+            const todoId = button.getAttribute('data-todo-id');
+
+            fetch(`/todo/${todoId}`, {
+                method: 'DELETE',
+            }).then(() => {
+                window.location.href = "/";
+            })
+        })
+    }
+</script>
+<form action="/todo" method="post">
+    <fieldset>
+        <label for="todo">Add Todo</label>
+        <input type="text" id="todo" name="todo"/>
+        <label for="due">Due</label>
+        <input id="due" name="due" type="datetime-local"/>
+        <br/>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
+<h2 th:if="${todos.size() > 0}">Todos</h2>
+<ul th:each="todo: ${todos}">
+    <li>
+        <span th:utext="${todo.getTodo()} + ' (Due: ' + ${#temporals.format(todo.getDue(), 'SHORT')} + ')' "></span>
+        <button id="delete-button" th:data-todo-id="${todo.getId()}">✖</button>
+    </li>
+</ul>
+<div th:include="footer"></div>
