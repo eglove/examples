@@ -59,11 +59,10 @@ public class AuctionsController : ControllerBase
 
         _context.Auctions.Add(auction);
 
-        var results = await _context.SaveChangesAsync() > 0;
-
         var newAuction = _mapper.Map<AuctionDto>(auction);
-
         await _publishEndpoint.Publish(_mapper.Map<AuctionCreated>(newAuction));
+
+        var results = await _context.SaveChangesAsync() > 0;
 
         if (!results)
         {
@@ -91,6 +90,8 @@ public class AuctionsController : ControllerBase
         auction.Item.Mileage = updateAuctionDto.Mileage ?? auction.Item.Mileage;
         auction.Item.Year = updateAuctionDto.Year ?? auction.Item.Year;
 
+        await _publishEndpoint.Publish(_mapper.Map<AuctionUpdated>(_mapper.Map<AuctionUpdated>(auction)));
+
         var result = await _context.SaveChangesAsync() > 0;
 
         if (result)
@@ -112,6 +113,11 @@ public class AuctionsController : ControllerBase
         }
 
         _context.Auctions.Remove(auction);
+
+        await _publishEndpoint.Publish<AuctionDeleted>(new
+        {
+            Id = auction.Id.ToString()
+        });
 
         var results = await _context.SaveChangesAsync() > 0;
 
