@@ -1,3 +1,3 @@
-﻿[From Course](https://www.linkedin.com/safety/go?url=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fbuild-a-microservices-app-with-dotnet-and-nextjs-from-scratch%2F&trk=flagship-messaging-web&messageThreadUrn=urn%3Ali%3AmessagingThread%3A2-ODI1Yzc2NTEtZTc5ZC00ODRkLTgxMjMtZGRkOGZkOWMwNjAxXzAxMA%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BwGvFumXSSOaBszyLIQy%2BQg%3D%3D)
+﻿[From Course](https://www.udemy.com/course/build-a-microservices-app-with-dotnet-and-nextjs-from-scratch/)
 
 ![Carsties architecture diagram](./carsties-diagram.png)
