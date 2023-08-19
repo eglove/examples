@@ -9,21 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ethang/use-form": "^1.4.15",
+    "@ethang/use-form": "^1.4.16",
     "@tanstack/react-query": "^4.32.6",
     "@tanstack/react-query-next-experimental": "5.0.0-alpha.80",
-    "@types/node": "20.5.0",
+    "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "^8.47.0",
     "eslint-config-ethang": "^8.1.3",
-    "next": "13.4.18",
+    "next": "13.4.19",
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
-    "zod": "^3.22.1"
+    "zod": "^3.22.2"
   }
 }
