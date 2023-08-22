@@ -1,3 +1,4 @@
+using Duende.IdentityServer;
 using Duende.IdentityServer.Events;
 using Duende.IdentityServer.Extensions;
 using Duende.IdentityServer.Models;
@@ -13,8 +14,8 @@ namespace IdentityService.Pages.Ciba;
 [SecurityHeadersAttribute]
 public class Consent : PageModel
 {
-    private readonly IBackchannelAuthenticationInteractionService _interaction;
     private readonly IEventService _events;
+    private readonly IBackchannelAuthenticationInteractionService _interaction;
     private readonly ILogger<Consent> _logger;
 
     public Consent(
@@ -34,10 +35,7 @@ public class Consent : PageModel
     public async Task<IActionResult> OnGet(string id)
     {
         View = await BuildViewModelAsync(id);
-        if (View == null)
-        {
-            return RedirectToPage("/Home/Error/Index");
-        }
+        if (View == null) return RedirectToPage("/Home/Error/Index");
 
         Input = new InputModel
         {
@@ -76,10 +74,8 @@ public class Consent : PageModel
             {
                 var scopes = Input.ScopesConsented;
                 if (ConsentOptions.EnableOfflineAccess == false)
-                {
                     scopes = scopes.Where(x =>
-                        x != Duende.IdentityServer.IdentityServerConstants.StandardScopes.OfflineAccess);
-                }
+                        x != IdentityServerConstants.StandardScopes.OfflineAccess);
 
                 result = new CompleteBackchannelLoginRequest(Input.Id)
                 {
@@ -118,13 +114,8 @@ public class Consent : PageModel
     {
         var request = await _interaction.GetLoginRequestByInternalIdAsync(id);
         if (request != null && request.Subject.GetSubjectId() == User.GetSubjectId())
-        {
             return CreateConsentViewModel(model, id, request);
-        }
-        else
-        {
-            _logger.LogError("No backchannel login request matching id: {id}", id);
-        }
+        _logger.LogError("No backchannel login request matching id: {id}", id);
 
         return null;
     }
@@ -162,18 +153,16 @@ public class Consent : PageModel
                     .Select(x => new ResourceViewModel
                     {
                         Name = x.Name,
-                        DisplayName = x.DisplayName ?? x.Name,
+                        DisplayName = x.DisplayName ?? x.Name
                     }).ToArray();
                 apiScopes.Add(scopeVm);
             }
         }
 
         if (ConsentOptions.EnableOfflineAccess && request.ValidatedResources.Resources.OfflineAccess)
-        {
             apiScopes.Add(GetOfflineAccessScope(model == null ||
-                                                model.ScopesConsented?.Contains(Duende.IdentityServer
-                                                    .IdentityServerConstants.StandardScopes.OfflineAccess) == true));
-        }
+                                                model.ScopesConsented?.Contains(IdentityServerConstants.StandardScopes
+                                                    .OfflineAccess) == true));
 
         vm.ApiScopes = apiScopes;
 
@@ -197,10 +186,8 @@ public class Consent : PageModel
     public ScopeViewModel CreateScopeViewModel(ParsedScopeValue parsedScopeValue, ApiScope apiScope, bool check)
     {
         var displayName = apiScope.DisplayName ?? apiScope.Name;
-        if (!String.IsNullOrWhiteSpace(parsedScopeValue.ParsedParameter))
-        {
+        if (!string.IsNullOrWhiteSpace(parsedScopeValue.ParsedParameter))
             displayName += ":" + parsedScopeValue.ParsedParameter;
-        }
 
         return new ScopeViewModel
         {
@@ -218,7 +205,7 @@ public class Consent : PageModel
     {
         return new ScopeViewModel
         {
-            Value = Duende.IdentityServer.IdentityServerConstants.StandardScopes.OfflineAccess,
+            Value = IdentityServerConstants.StandardScopes.OfflineAccess,
             DisplayName = ConsentOptions.OfflineAccessDisplayName,
             Description = ConsentOptions.OfflineAccessDescription,
             Emphasize = true,

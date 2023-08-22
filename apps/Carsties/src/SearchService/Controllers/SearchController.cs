@@ -17,9 +17,7 @@ public class SearchController : ControllerBase
         query.Sort(x => x.Ascending(a => a.Make));
 
         if (!string.IsNullOrEmpty(searchParams.SearchTerm))
-        {
             query.Match(Search.Full, searchParams.SearchTerm).SortByTextScore();
-        }
 
         query = searchParams.OrderBy switch
         {
@@ -36,15 +34,9 @@ public class SearchController : ControllerBase
             _ => query.Match(x => x.AuctionEnd > DateTime.UtcNow)
         };
 
-        if (!string.IsNullOrEmpty(searchParams.Seller))
-        {
-            query.Match(x => x.Seller == searchParams.Seller);
-        }
-        
-        if (!string.IsNullOrEmpty(searchParams.Winner))
-        {
-            query.Match(x => x.Winner == searchParams.Winner);
-        }
+        if (!string.IsNullOrEmpty(searchParams.Seller)) query.Match(x => x.Seller == searchParams.Seller);
+
+        if (!string.IsNullOrEmpty(searchParams.Winner)) query.Match(x => x.Winner == searchParams.Winner);
 
         query.Skip((searchParams.PageNumber - 1) * searchParams.PageSize).Limit(searchParams.PageSize);
 
@@ -54,7 +46,7 @@ public class SearchController : ControllerBase
         {
             results = result,
             pageCount = searchParams.PageSize,
-            totalCount = result.Count,
+            totalCount = result.Count
         });
     }
 }

@@ -25,7 +25,7 @@ builder.Services.AddMassTransit(x =>
     x.AddConsumersFromNamespaceContaining<AuctionCreatedFaultConsumer>();
     x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("auction", false));
 
-    x.UsingRabbitMq(((context, configurator) =>
+    x.UsingRabbitMq((context, configurator) =>
     {
         configurator.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
         {
@@ -33,7 +33,7 @@ builder.Services.AddMassTransit(x =>
             host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
         });
         configurator.ConfigureEndpoints(context);
-    }));
+    });
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

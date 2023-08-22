@@ -44,10 +44,7 @@ public class AuctionsController : ControllerBase
             .Include(x => x.Item)
             .FirstOrDefaultAsync(x => x.Id == id);
 
-        if (auction == null)
-        {
-            return NotFound();
-        }
+        if (auction == null) return NotFound();
 
         return _mapper.Map<AuctionDto>(auction);
     }
@@ -66,10 +63,7 @@ public class AuctionsController : ControllerBase
 
         var results = await _context.SaveChangesAsync() > 0;
 
-        if (!results)
-        {
-            return BadRequest("Could not save changes to the database.");
-        }
+        if (!results) return BadRequest("Could not save changes to the database.");
 
         return CreatedAtAction(nameof(GetAuctionById), new { auction.Id }, newAuction);
     }
@@ -82,15 +76,9 @@ public class AuctionsController : ControllerBase
             .FirstOrDefaultAsync(x => x.Id == id);
 
 
-        if (auction == null)
-        {
-            return NotFound();
-        }
+        if (auction == null) return NotFound();
 
-        if (auction.Seller != User.Identity.Name)
-        {
-            return Forbid();
-        }
+        if (auction.Seller != User.Identity.Name) return Forbid();
 
         auction.Item.Make = updateAuctionDto.Make ?? auction.Item.Make;
         auction.Item.Model = updateAuctionDto.Model ?? auction.Item.Model;
@@ -102,10 +90,7 @@ public class AuctionsController : ControllerBase
 
         var result = await _context.SaveChangesAsync() > 0;
 
-        if (result)
-        {
-            return Ok();
-        }
+        if (result) return Ok();
 
         return BadRequest("Problem saving changes.");
     }
@@ -116,15 +101,9 @@ public class AuctionsController : ControllerBase
     {
         var auction = await _context.Auctions.FindAsync(id);
 
-        if (auction == null)
-        {
-            return NotFound();
-        }
+        if (auction == null) return NotFound();
 
-        if (auction.Seller != User.Identity.Name)
-        {
-            return Forbid();
-        }
+        if (auction.Seller != User.Identity.Name) return Forbid();
 
         _context.Auctions.Remove(auction);
 
@@ -135,10 +114,7 @@ public class AuctionsController : ControllerBase
 
         var results = await _context.SaveChangesAsync() > 0;
 
-        if (!results)
-        {
-            return BadRequest("Could not update DB.");
-        }
+        if (!results) return BadRequest("Could not update DB.");
 
         return Ok();
     }

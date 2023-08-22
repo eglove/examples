@@ -33,9 +33,6 @@ public class AuctionUpdatedConsumer : IConsumer<AuctionUpdated>
             }, item)
             .ExecuteAsync();
 
-        if (!result.IsAcknowledged)
-        {
-            throw new MessageException(typeof(AuctionUpdated), "Problem updating search db");
-        }
+        if (!result.IsAcknowledged) throw new MessageException(typeof(AuctionUpdated), "Problem updating search db");
     }
 }

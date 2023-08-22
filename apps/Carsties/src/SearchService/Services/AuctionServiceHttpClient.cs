@@ -5,8 +5,8 @@ namespace SearchService.Services;
 
 public class AuctionServiceHttpClient
 {
-    private readonly HttpClient _httpClient;
     private readonly IConfiguration _configuration;
+    private readonly HttpClient _httpClient;
 
     public AuctionServiceHttpClient(HttpClient httpClient, IConfiguration configuration)
     {

@@ -1,3 +1,4 @@
+using Duende.IdentityServer;
 using Duende.IdentityServer.Events;
 using Duende.IdentityServer.Extensions;
 using Duende.IdentityServer.Models;
@@ -14,8 +15,8 @@ namespace IdentityService.Pages.Consent;
 [SecurityHeadersAttribute]
 public class Index : PageModel
 {
-    private readonly IIdentityServerInteractionService _interaction;
     private readonly IEventService _events;
+    private readonly IIdentityServerInteractionService _interaction;
     private readonly ILogger<Index> _logger;
 
     public Index(
@@ -35,14 +36,11 @@ public class Index : PageModel
     public async Task<IActionResult> OnGet(string returnUrl)
     {
         View = await BuildViewModelAsync(returnUrl);
-        if (View == null)
-        {
-            return RedirectToPage("/Home/Error/Index");
-        }
+        if (View == null) return RedirectToPage("/Home/Error/Index");
 
         Input = new InputModel
         {
-            ReturnUrl = returnUrl,
+            ReturnUrl = returnUrl
         };
 
         return Page();
@@ -73,10 +71,8 @@ public class Index : PageModel
             {
                 var scopes = Input.ScopesConsented;
                 if (ConsentOptions.EnableOfflineAccess == false)
-                {
                     scopes = scopes.Where(x =>
-                        x != Duende.IdentityServer.IdentityServerConstants.StandardScopes.OfflineAccess);
-                }
+                        x != IdentityServerConstants.StandardScopes.OfflineAccess);
 
                 grantedConsent = new ConsentResponse
                 {
@@ -106,12 +102,10 @@ public class Index : PageModel
             await _interaction.GrantConsentAsync(request, grantedConsent);
 
             // redirect back to authorization endpoint
-            if (request.IsNativeClient() == true)
-            {
+            if (request.IsNativeClient())
                 // The client is native, so this change in how to
                 // return the response is for better UX for the end user.
                 return this.LoadingPage(Input.ReturnUrl);
-            }
 
             return Redirect(Input.ReturnUrl);
         }
@@ -125,13 +119,8 @@ public class Index : PageModel
     {
         var request = await _interaction.GetAuthorizationContextAsync(returnUrl);
         if (request != null)
-        {
             return CreateConsentViewModel(model, returnUrl, request);
-        }
-        else
-        {
-            _logger.LogError("No consent request matching request: {0}", returnUrl);
-        }
+        _logger.LogError("No consent request matching request: {0}", returnUrl);
 
         return null;
     }
@@ -170,18 +159,16 @@ public class Index : PageModel
                     .Select(x => new ResourceViewModel
                     {
                         Name = x.Name,
-                        DisplayName = x.DisplayName ?? x.Name,
+                        DisplayName = x.DisplayName ?? x.Name
                     }).ToArray();
                 apiScopes.Add(scopeVm);
             }
         }
 
         if (ConsentOptions.EnableOfflineAccess && request.ValidatedResources.Resources.OfflineAccess)
-        {
             apiScopes.Add(GetOfflineAccessScope(model == null ||
-                                                model.ScopesConsented?.Contains(Duende.IdentityServer
-                                                    .IdentityServerConstants.StandardScopes.OfflineAccess) == true));
-        }
+                                                model.ScopesConsented?.Contains(IdentityServerConstants.StandardScopes
+                                                    .OfflineAccess) == true));
 
         vm.ApiScopes = apiScopes;
 
@@ -205,10 +192,8 @@ public class Index : PageModel
     public ScopeViewModel CreateScopeViewModel(ParsedScopeValue parsedScopeValue, ApiScope apiScope, bool check)
     {
         var displayName = apiScope.DisplayName ?? apiScope.Name;
-        if (!String.IsNullOrWhiteSpace(parsedScopeValue.ParsedParameter))
-        {
+        if (!string.IsNullOrWhiteSpace(parsedScopeValue.ParsedParameter))
             displayName += ":" + parsedScopeValue.ParsedParameter;
-        }
 
         return new ScopeViewModel
         {
@@ -226,7 +211,7 @@ public class Index : PageModel
     {
         return new ScopeViewModel
         {
-            Value = Duende.IdentityServer.IdentityServerConstants.StandardScopes.OfflineAccess,
+            Value = IdentityServerConstants.StandardScopes.OfflineAccess,
             DisplayName = ConsentOptions.OfflineAccessDisplayName,
             Description = ConsentOptions.OfflineAccessDescription,
             Emphasize = true,

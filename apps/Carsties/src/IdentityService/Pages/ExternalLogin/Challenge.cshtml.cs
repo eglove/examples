@@ -23,10 +23,8 @@ public class Challenge : PageModel
 
         // validate returnUrl - either it is a valid OIDC URL or back to a local page
         if (Url.IsLocalUrl(returnUrl) == false && _interactionService.IsValidReturnUrl(returnUrl) == false)
-        {
             // user might have clicked on a malicious link - should be logged
             throw new Exception("invalid return URL");
-        }
 
         // start challenge and roundtrip the return URL and scheme 
         var props = new AuthenticationProperties
@@ -36,7 +34,7 @@ public class Challenge : PageModel
             Items =
             {
                 { "returnUrl", returnUrl },
-                { "scheme", scheme },
+                { "scheme", scheme }
             }
         };
 

@@ -34,10 +34,7 @@ public class Index : PageModel
 
     public async Task<IActionResult> OnPost()
     {
-        if (Input.Button != "register")
-        {
-            return Redirect("~/");
-        }
+        if (Input.Button != "register") return Redirect("~/");
 
         if (!ModelState.IsValid) return Page();
 
@@ -54,7 +51,7 @@ public class Index : PageModel
 
         await _userManager.AddClaimsAsync(user, new Claim[]
         {
-            new Claim(JwtClaimTypes.Name, Input.FullName)
+            new(JwtClaimTypes.Name, Input.FullName)
         });
 
         RegisterSuccess = true;

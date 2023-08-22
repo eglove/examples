@@ -8,19 +8,19 @@ public static class Config
         new IdentityResource[]
         {
             new IdentityResources.OpenId(),
-            new IdentityResources.Profile(),
+            new IdentityResources.Profile()
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
         new ApiScope[]
         {
-            new ApiScope("auctionApp", "Auction app full access"),
+            new("auctionApp", "Auction app full access")
         };
 
     public static IEnumerable<Client> Clients =>
         new Client[]
         {
-            new Client
+            new()
             {
                 ClientId = "postman",
                 ClientName = "Postman",
@@ -29,7 +29,7 @@ public static class Config
                 ClientSecrets = new[] { new Secret("NotASecret".Sha256()) },
                 AllowedGrantTypes = { GrantType.ResourceOwnerPassword }
             },
-            new Client
+            new()
             {
                 ClientId = "nextApp",
                 ClientName = "nextApp",
@@ -37,13 +37,13 @@ public static class Config
                 AllowedGrantTypes = new List<string>
                 {
                     GrantType.AuthorizationCode,
-                    GrantType.ClientCredentials,
+                    GrantType.ClientCredentials
                 },
                 RequirePkce = false,
                 RedirectUris = { "http://localhost:3000/api/auth/callback/id-server" },
                 AllowOfflineAccess = true,
                 AllowedScopes = { "openid", "profile", "auctionApp" },
-                AccessTokenLifetime = 3600 * 24 * 30,
+                AccessTokenLifetime = 3600 * 24 * 30
             }
         };
 }
