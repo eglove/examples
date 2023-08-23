@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ethang/use-form": "^1.4.17",
+    "@ethang/use-form": "^1.4.18",
     "@tanstack/react-query": "^4.33.0",
     "@tanstack/react-query-next-experimental": "5.0.0-alpha.80",
-    "@types/node": "20.5.2",
-    "@types/react": "18.2.20",
+    "@types/node": "20.5.3",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "^8.47.0",
