@@ -1,24 +1,34 @@
 import { Pagination } from '@nextui-org/pagination';
 import { JSX } from 'react';
 
+import { useParameterStore } from '../hooks/use-parameter-store';
+
 type AppPaginationProperties = {
-  readonly currentPage: number;
-  readonly onPageChange: (page: number) => void;
   readonly pageCount: number;
 };
 
 export function AppPagination({
   pageCount,
-  currentPage,
-  onPageChange,
 }: AppPaginationProperties): JSX.Element {
+  const pageNumber = useParameterStore(state => {
+    return state.pageNumber;
+  });
+
+  const setParameters = useParameterStore(state => {
+    return state.setParameters;
+  });
+
+  const setPageNumber = (number: number): void => {
+    setParameters({ pageNumber: number });
+  };
+
   return (
     <Pagination
       className="my-5"
-      page={currentPage}
+      page={pageNumber}
       total={pageCount}
       variant="bordered"
-      onChange={onPageChange}
+      onChange={setPageNumber}
     />
   );
 }
