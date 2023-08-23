@@ -5,10 +5,12 @@ import { z } from 'zod';
 import { getData } from '../actions/auction-actions';
 import { AppPagination } from '../components/app-pagination';
 import { AuctionCard } from './auction-card';
+import { Filter } from './filter';
 import { auctionsSchema } from './schema';
 
 export function Listings(): JSX.Element {
   const [pageNumber, setPageNumber] = useState(1);
+  const [pageSize, setPageSize] = useState(4);
   const [data, setData] = useState<z.output<typeof auctionsSchema>>({
     pageCount: 0,
     results: [],
@@ -16,12 +18,12 @@ export function Listings(): JSX.Element {
   });
 
   useEffect(() => {
-    getData(pageNumber).then(data => {
+    getData(pageNumber, pageSize).then(data => {
       if (data) {
         setData(data);
       }
     });
-  }, [pageNumber]);
+  }, [pageNumber, pageSize]);
 
   if (data.results.length <= 0) {
     return <h3>Loading...</h3>;
@@ -29,6 +31,7 @@ export function Listings(): JSX.Element {
 
   return (
     <>
+      <Filter pageSize={pageSize} setPageSize={setPageSize} />
       <div className="grid grid-cols-4 gap-6">
         {data.results.map(auction => {
           return <AuctionCard auction={auction} key={auction.id} />;

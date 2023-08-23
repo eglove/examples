@@ -5,12 +5,13 @@ import { auctionsSchema } from '../auctions/schema';
 
 export async function getData(
   pageNumber: number,
+  pageSize = 4,
 ): Promise<z.output<typeof auctionsSchema> | undefined> {
   const url = new URL('http://localhost:6001/search');
 
   const searchParameters = new URLSearchParams({
     pageNumber: String(pageNumber),
-    pageSize: '4',
+    pageSize: String(pageSize),
   });
 
   const response = await fetch(
