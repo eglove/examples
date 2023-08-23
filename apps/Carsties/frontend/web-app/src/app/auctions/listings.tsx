@@ -43,7 +43,7 @@ export function Listings(): JSX.Element {
         pageSize,
         searchTerm,
       });
-      if (data) {
+      if (!isNil(data)) {
         setData(data);
       }
     }, 300)();

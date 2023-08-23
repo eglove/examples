@@ -32,8 +32,6 @@ export async function getData({
     searchParameters.append('searchTerm', searchTerm);
   }
 
-  console.log(`${url.toString()}?${searchParameters.toString()}`);
-
   const response = await fetch(
     `${url.toString()}?${searchParameters.toString()}`,
   );
