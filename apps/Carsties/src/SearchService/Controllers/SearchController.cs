@@ -12,6 +12,7 @@ public class SearchController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Item>>> SearchItems([FromQuery] SearchParams searchParams)
     {
+        var totalCount = await DB.CountAsync<Item>();
         var query = DB.Find<Item, Item>();
 
         query.Sort(x => x.Ascending(a => a.Make));
@@ -41,12 +42,12 @@ public class SearchController : ControllerBase
         query.Skip((searchParams.PageNumber - 1) * searchParams.PageSize).Limit(searchParams.PageSize);
 
         var result = await query.ExecuteAsync();
-
+        
         return Ok(new
         {
             results = result,
-            pageCount = searchParams.PageSize,
-            totalCount = result.Count
+            pageCount = (int)Math.Ceiling((double)totalCount / searchParams.PageSize),
+            totalCount
         });
     }
 }
