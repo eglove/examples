@@ -31,8 +31,6 @@ B
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 A
 postcss.config.js,3\f\3f70684581fd16ab3be77ca959e0138ef3ee8bfb
->
-.eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 L
 src/app/client-providers.tsx,2\b\2b000e109cc7a1350cc80c1ef90897b756f680c6
 Q

@@ -1,9 +1,10 @@
+import { isEmpty } from 'lodash';
 import { JSX } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type HeadingProperties = {
   readonly isCenter?: boolean;
-  readonly subtitle: string;
+  readonly subtitle?: string;
   readonly title: string;
 };
 
@@ -15,7 +16,9 @@ export function Heading({
   return (
     <div className={twMerge(isCenter ? 'text-center' : 'text-start')}>
       <div className="text-2xl font-bold">{title}</div>
-      <div className="mt-2 font-light text-neutral-500">{subtitle}</div>
+      {!isEmpty(subtitle) && (
+        <div className="mt-2 font-light text-neutral-500">{subtitle}</div>
+      )}
     </div>
   );
 }

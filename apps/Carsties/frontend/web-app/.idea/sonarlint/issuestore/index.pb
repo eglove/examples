@@ -11,8 +11,6 @@ $.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
->
-.eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

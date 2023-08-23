@@ -1,4 +1,4 @@
 {
   "extends": "ethang",
-  "ignorePatterns": ["*.config.ts", "*.config.js"]
+  "ignorePatterns": ["*.config.ts", "*.config.js", "*.d.ts"]
 }
