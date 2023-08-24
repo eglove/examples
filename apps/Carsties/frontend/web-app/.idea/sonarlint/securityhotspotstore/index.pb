@@ -40,8 +40,6 @@ Q
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 U
 %src/app/components/app-pagination.tsx,3\0\300b3df1520602c3eef75681a71366206224f04b
 @
@@ -58,8 +56,6 @@ K
 src/app/auctions/filter.tsx,0\b\0b135d6a3f7405a2382f71600cf7086f2aba5ebf
 M
 src/app/auctions/listings.tsx,f\c\fc52ecf97135d1775e8d0f76f71987bf5f074153
-R
-"src/app/actions/auction-actions.ts,1\6\16159f7e93085ebcb6b357a0423e38d6d29ed01b
 E
 src/app/nav/login.tsx,1\0\10d58d9952415fac6600750171816913117a82a4
 N
@@ -67,21 +63,13 @@ N
 :
 
 .env.local,1\f\1fa30fea3e9ae270a3c38a6113a3689d8987d108
-H
-src/app/session/page.tsx,6\5\65d6d058eb6422396dc54c47baf8138446b8c2bd
-D
-types/next-auth.d.ts,9\f\9f657df8d3ab9a4cf75e5b56f6689d9ad85b5cee
-F
-src/app/nav/navbar.tsx,6\8\68717cedc3895b786b8259272598cbc97f2b35d5
-O
-src/app/actions/auth-actions.ts,1\e\1e58290a3e4267767f00be380f53f10bbf324748
-L
-src/app/nav/user-actions.tsx,f\4\f43756bc0605a2b3ecfd766daeb1c784c6da484b
-D
-src/app/nav/logo.tsx,2\7\27668a3c1163d2d47ec76ba0f19abf43a496689d
 S
 #src/app/components/empty-filter.tsx,2\d\2dd96a16b85cb1d4f45b528f7d81cc9aa6a57eaf
-W
-'src/app/api/auth/[...nextauth]/route.ts,4\a\4abd2937daa5494947031dfeda7cb34d47b6d780
->
-.eslintrc.json,7\1\71c20a341bfe32aa5cd5b4384e94f942bab6a7d3
+L
+src/app/nav/user-actions.tsx,f\4\f43756bc0605a2b3ecfd766daeb1c784c6da484b
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+D
+src/app/nav/logo.tsx,2\7\27668a3c1163d2d47ec76ba0f19abf43a496689d
+F
+src/app/nav/navbar.tsx,6\8\68717cedc3895b786b8259272598cbc97f2b35d5

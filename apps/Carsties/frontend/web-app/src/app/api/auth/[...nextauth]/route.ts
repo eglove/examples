@@ -4,13 +4,20 @@ import DuendeIdentityServer6 from 'next-auth/providers/duende-identity-server6';
 
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    jwt({ token, profile }) {
+    jwt({ token, profile, account }) {
       let newToken = token;
 
       if (!isNil(profile)) {
         newToken = {
           ...token,
           username: profile.username,
+        };
+      }
+
+      if (!isNil(account)) {
+        newToken = {
+          ...token,
+          access_token: account.access_token,
         };
       }
 

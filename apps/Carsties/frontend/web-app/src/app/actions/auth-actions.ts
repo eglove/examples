@@ -1,4 +1,7 @@
+import { NextApiRequest } from 'next';
+import { cookies, headers } from 'next/headers';
 import { getServerSession, Session } from 'next-auth';
+import { getToken, JWT } from 'next-auth/jwt';
 
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
@@ -18,4 +21,19 @@ export async function getCurrentUser(): Promise<Session['user'] | null> {
   } catch {
     return null;
   }
+}
+
+export async function getTokenWorkaround(): Promise<JWT | null> {
+  const request = {
+    cookies: Object.fromEntries(
+      cookies()
+        .getAll()
+        .map(item => {
+          return [item.name, item.value];
+        }),
+    ),
+    headers: Object.fromEntries(headers()),
+  } as NextApiRequest;
+
+  return getToken({ req: request });
 }
