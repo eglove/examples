@@ -11,25 +11,17 @@ type GetDataParameters = {
   pageNumber: number;
   pageSize?: number;
   searchTerm?: string;
+  seller?: string;
+  winner?: string;
 };
 
 const baseUrl = 'http://localhost:6001';
 
-export async function getData({
-  orderBy = 'auctionEnd',
-  pageNumber,
-  pageSize = 4,
-  searchTerm,
-  filterBy = 'live',
-}: GetDataParameters): Promise<z.output<typeof auctionsSchema> | undefined> {
+export async function getData(
+  parameters: GetDataParameters,
+): Promise<z.output<typeof auctionsSchema> | undefined> {
   const builder = urlBuilder('search', {
-    searchParams: {
-      filterBy,
-      orderBy,
-      pageNumber,
-      pageSize,
-      searchTerm,
-    },
+    searchParams: parameters,
     urlBase: baseUrl,
   });
 

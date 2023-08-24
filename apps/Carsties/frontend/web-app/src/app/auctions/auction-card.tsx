@@ -12,7 +12,7 @@ type AuctionCardProperties = {
 
 export function AuctionCard({ auction }: AuctionCardProperties): JSX.Element {
   return (
-    <Link className="group" href="#">
+    <Link className="group" href={`/auctions/details/${auction.id}`}>
       <div className="aspect-h-10 aspect-w-16 w-full overflow-hidden rounded-lg bg-gray-200">
         <CardImage
           alt={`${auction.color} ${auction.make} ${auction.model}`}

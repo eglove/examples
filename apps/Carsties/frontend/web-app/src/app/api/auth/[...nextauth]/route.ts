@@ -16,7 +16,7 @@ export const authOptions: NextAuthOptions = {
 
       if (!isNil(account)) {
         newToken = {
-          ...token,
+          ...newToken,
           access_token: account.access_token,
         };
       }

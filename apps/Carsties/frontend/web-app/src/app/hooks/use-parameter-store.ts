@@ -8,6 +8,8 @@ type QueryState = {
   pageNumber: number;
   pageSize: number;
   searchTerm: string;
+  seller?: string;
+  winner?: string;
 };
 
 type QueryActions = {
@@ -22,6 +24,8 @@ const initialState: QueryState = {
   pageNumber: 1,
   pageSize: 12,
   searchTerm: '',
+  seller: undefined,
+  winner: undefined,
 };
 
 export const useParameterStore = create<QueryState & QueryActions>()(set => {

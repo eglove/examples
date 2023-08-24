@@ -12,6 +12,7 @@ import { Filter } from './filter';
 import { auctionsSchema } from './schema';
 
 export function Listings(): JSX.Element {
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<z.output<typeof auctionsSchema>>({
     pageCount: 0,
     results: [],
@@ -33,8 +34,15 @@ export function Listings(): JSX.Element {
   const searchTerm = useParameterStore(state => {
     return state.searchTerm;
   });
+  const winner = useParameterStore(state => {
+    return state.winner;
+  });
+  const seller = useParameterStore(state => {
+    return state.seller;
+  });
 
   useEffect(() => {
+    setIsLoading(true);
     debounce(async () => {
       const data = await getData({
         filterBy,
@@ -42,21 +50,25 @@ export function Listings(): JSX.Element {
         pageNumber,
         pageSize,
         searchTerm,
+        seller,
+        winner,
+      }).finally(() => {
+        return setIsLoading(false);
       });
       if (!isNil(data)) {
         setData(data);
       }
     }, 300)();
-  }, [filterBy, orderBy, pageNumber, pageSize, searchTerm]);
+  }, [filterBy, orderBy, pageNumber, pageSize, searchTerm, seller, winner]);
 
-  if (isNil(data)) {
+  if (isLoading || isNil(data)) {
     return <h3>Loading...</h3>;
   }
 
   return (
     <>
       <Filter />
-      {data.results.length <= 0 && <EmptyFilter isShowingReset />}
+      {!isLoading && data.results.length <= 0 && <EmptyFilter isShowingReset />}
       <div className="grid grid-cols-4 gap-6">
         {data.results.map(auction => {
           return <AuctionCard auction={auction} key={auction.id} />;

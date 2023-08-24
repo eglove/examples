@@ -33,8 +33,6 @@ A
 postcss.config.js,3\f\3f70684581fd16ab3be77ca959e0138ef3ee8bfb
 L
 src/app/client-providers.tsx,2\b\2b000e109cc7a1350cc80c1ef90897b756f680c6
-Q
-!src/app/auctions/auction-card.tsx,b\2\b2b3a61c59a934e743e050517f4c4b77a6dbe8c9
 =
 tsconfig.json,6\1\61ebb9fd6e8cf9082658121d5d81e297791dacd0
 :
@@ -42,20 +40,8 @@ Q
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 U
 %src/app/components/app-pagination.tsx,3\0\300b3df1520602c3eef75681a71366206224f04b
-@
-src/app/page.tsx,3\3\3393394e21dbac7686e91ad17c5283fb052d67f3
 F
 src/app/nav/search.tsx,0\c\0c6e199097892219e8e27fa2a37f8b0f57117bb8
-B
-src/app/layout.tsx,c\f\cfb47de6ae0cae626eed46461300112ef521d977
-J
-src/app/auctions/schema.ts,6\b\6ba3d14333f9c7fc023c49e5825efce8cb20b93f
-T
-$src/app/hooks/use-parameter-store.ts,1\6\16c68e1fcc527d27292e3ae8502461b6665d709f
-K
-src/app/auctions/filter.tsx,0\b\0b135d6a3f7405a2382f71600cf7086f2aba5ebf
-M
-src/app/auctions/listings.tsx,f\c\fc52ecf97135d1775e8d0f76f71987bf5f074153
 E
 src/app/nav/login.tsx,1\0\10d58d9952415fac6600750171816913117a82a4
 N
@@ -65,11 +51,5 @@ N
 .env.local,1\f\1fa30fea3e9ae270a3c38a6113a3689d8987d108
 S
 #src/app/components/empty-filter.tsx,2\d\2dd96a16b85cb1d4f45b528f7d81cc9aa6a57eaf
-L
-src/app/nav/user-actions.tsx,f\4\f43756bc0605a2b3ecfd766daeb1c784c6da484b
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 D
 src/app/nav/logo.tsx,2\7\27668a3c1163d2d47ec76ba0f19abf43a496689d
-F
-src/app/nav/navbar.tsx,6\8\68717cedc3895b786b8259272598cbc97f2b35d5
