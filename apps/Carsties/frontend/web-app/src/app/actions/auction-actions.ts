@@ -2,6 +2,7 @@
 import { urlBuilder } from '@ethang/url';
 import { z } from 'zod';
 
+import { zodFetch } from '../../../lib/requests';
 import { auctionsSchema } from '../auctions/schema';
 import { getTokenWorkaround } from './auth-actions';
 
@@ -25,19 +26,12 @@ export async function getData(
     urlBase: baseUrl,
   });
 
-  const response = await fetch(builder.toString());
+  const { data } = await zodFetch(
+    new Request(builder.toString()),
+    auctionsSchema,
+  );
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  const parsed = auctionsSchema.safeParse(await response.json());
-
-  if (parsed.success) {
-    return parsed.data;
-  }
-
-  throw parsed.error;
+  return data;
 }
 
 export type UpdateAuctionTestReturn =
