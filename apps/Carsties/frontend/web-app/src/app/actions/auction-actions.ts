@@ -1,9 +1,6 @@
 'use server';
 import { urlBuilder } from '@ethang/url';
-import { z } from 'zod';
 
-import { zodFetch } from '../../../lib/requests';
-import { auctionsSchema } from '../auctions/schema';
 import { getTokenWorkaround } from './auth-actions';
 
 type GetDataParameters = {
@@ -17,22 +14,6 @@ type GetDataParameters = {
 };
 
 const baseUrl = 'http://localhost:6001';
-
-export async function getData(
-  parameters: GetDataParameters,
-): Promise<z.output<typeof auctionsSchema> | undefined> {
-  const builder = urlBuilder('search', {
-    searchParams: parameters,
-    urlBase: baseUrl,
-  });
-
-  const { data } = await zodFetch(
-    new Request(builder.toString()),
-    auctionsSchema,
-  );
-
-  return data;
-}
 
 export type UpdateAuctionTestReturn =
   | string

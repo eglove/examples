@@ -3,7 +3,7 @@ import { debounce, isNil } from 'lodash';
 import { JSX, useEffect, useState } from 'react';
 import { z } from 'zod';
 
-import { getData } from '../actions/auction-actions';
+import { api } from '../../../lib/requests';
 import { AppPagination } from '../components/app-pagination';
 import { EmptyFilter } from '../components/empty-filter';
 import { useParameterStore } from '../hooks/use-parameter-store';
@@ -44,17 +44,22 @@ export function Listings(): JSX.Element {
   useEffect(() => {
     setIsLoading(true);
     debounce(async () => {
-      const data = await getData({
-        filterBy,
-        orderBy,
-        pageNumber,
-        pageSize,
-        searchTerm,
-        seller,
-        winner,
-      }).finally(() => {
-        return setIsLoading(false);
-      });
+      const { data } = await api
+        .fetch('search', {
+          searchParameters: {
+            filterBy,
+            orderBy,
+            pageNumber,
+            pageSize,
+            searchTerm,
+            seller,
+            winner,
+          },
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+
       if (!isNil(data)) {
         setData(data);
       }
