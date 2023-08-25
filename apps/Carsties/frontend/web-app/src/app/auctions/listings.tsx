@@ -44,7 +44,7 @@ export function Listings(): JSX.Element {
   useEffect(() => {
     setIsLoading(true);
     debounce(async () => {
-      const { data, errors, isSuccess } = await api
+      const { data } = await api
         .fetch('search', {
           searchParams: {
             filterBy,
@@ -59,8 +59,6 @@ export function Listings(): JSX.Element {
         .finally(() => {
           setIsLoading(false);
         });
-
-      console.log(data, errors, isSuccess);
 
       if (!isNil(data)) {
         setData(data);
