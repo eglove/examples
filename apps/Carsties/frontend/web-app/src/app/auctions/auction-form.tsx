@@ -2,11 +2,30 @@
 import { useForm } from '@ethang/use-form';
 import { Button } from '@nextui-org/button';
 import { Input } from '@nextui-org/input';
+import { isEmpty } from 'lodash';
 import { DateTime } from 'luxon';
+import { usePathname, useRouter } from 'next/navigation';
 import { JSX, useState } from 'react';
 import { z } from 'zod';
 
-const formSchema = z.object({
+import { createAuction, updateAuction } from '../../../lib/requests';
+import { auctionSchema } from './schema';
+
+type AuctionFormProperties = {
+  readonly auction?: z.output<typeof auctionSchema>;
+};
+
+const updateSchema = z.object({
+  color: z.string().min(1, 'Color is required'),
+  make: z.string().min(1, 'Make is required'),
+  mileage: z.number({ invalid_type_error: 'Mileage is required' }),
+  model: z.string().min(1, 'Model is required'),
+  year: z
+    .number({ invalid_type_error: 'Year is required' })
+    .min(1000, 'Year is required'),
+});
+
+const createSchema = z.object({
   auctionEnd: z
     .string()
     .min(1, 'Date is required')
@@ -15,45 +34,72 @@ const formSchema = z.object({
         zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       });
 
-      return luxonDate.toISO();
+      return luxonDate.toUTC().toString();
     }),
-  color: z.string().min(1, 'Color is required'),
   imageUrl: z.string().min(1, 'Image URL is required').url('Must be valid URL'),
-  make: z.string().min(1, 'Make is required'),
-  mileage: z.number({ invalid_type_error: 'Mileage is required' }),
-  model: z.string().min(1, 'Model is required'),
-  reservedPrice: z.number(),
-  year: z
-    .number({ invalid_type_error: 'Year is required' })
-    .min(1000, 'Year is required'),
+  reservedPrice: z.string().transform(value => {
+    if (isEmpty(value)) {
+      return '0';
+    }
+
+    return value;
+  }),
+  ...updateSchema.shape,
 });
 
-export function AuctionForm(): JSX.Element {
+export function AuctionForm({ auction }: AuctionFormProperties): JSX.Element {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isCreating = pathname === '/auctions/create';
+
   const [isLoading, setIsLoading] = useState(false);
-  const { formState, clearForm, handleSubmit, handleChange, fieldErrors } =
-    useForm(
-      {
-        auctionEnd: new Date().toISOString().slice(0, 16),
-        color: '',
-        imageUrl: '',
-        make: '',
-        mileage: '',
-        model: '',
-        reservedPrice: '',
-        year: '',
-      },
-      {
-        onSubmit() {
-          setIsLoading(true);
-          console.log(formSchema.parse(formState));
-          setIsLoading(false);
+  const {
+    formError,
+    formState,
+    clearForm,
+    handleSubmit,
+    handleChange,
+    fieldErrors,
+  } = useForm(
+    auction
+      ? {
+          color: auction.color,
+          make: auction.make,
+          mileage: auction.mileage,
+          model: auction.model,
+          year: auction.year,
+        }
+      : {
+          auctionEnd: new Date().toISOString().slice(0, 16),
+          color: 'Black',
+          imageUrl:
+            'https://cdn.pixabay.com/photo/2012/11/02/13/02/car-63930_1280.jpg',
+          make: 'Ford',
+          mileage: 100,
+          model: 'Mustang',
+          reservedPrice: '',
+          year: 2022,
         },
-        zodValidator: formSchema,
+    {
+      async onSubmit() {
+        setIsLoading(true);
+
+        const { data } = isCreating
+          ? await createAuction(JSON.stringify(createSchema.parse(formState)))
+          : await updateAuction(
+              JSON.stringify(updateSchema.parse(formState)),
+              auction?.id ?? '',
+            );
+
+        router.push(`/auctions/details/${isCreating ? data.id : auction?.id}`);
       },
-    );
+      zodValidator: isCreating ? createSchema : updateSchema,
+    },
+  );
 
   return (
     <form className="mt-3 flex flex-col" onSubmit={handleSubmit}>
+      {!isEmpty(formError) && <p>{formError}</p>}
       <fieldset disabled={isLoading}>
         <div className="grid gap-2">
           <Input
@@ -83,7 +129,7 @@ export function AuctionForm(): JSX.Element {
               label="Year"
               name="year"
               type="number"
-              value={formState.year}
+              value={formState.year as unknown as string}
               onChange={handleChange}
             />
             <Input
@@ -91,35 +137,39 @@ export function AuctionForm(): JSX.Element {
               label="Mileage"
               name="mileage"
               type="number"
-              value={formState.mileage}
+              value={formState.mileage as unknown as string}
               onChange={handleChange}
             />
           </div>
-          <Input
-            errorMessage={fieldErrors?.imageUrl?.[0]}
-            label="Image URL"
-            name="imageUrl"
-            value={formState.imageUrl}
-            onChange={handleChange}
-          />
-          <div className="grid grid-cols-2 gap-3">
+          {isCreating && (
             <Input
-              errorMessage={fieldErrors?.reservedPrice?.[0]}
-              label="Reserve Price"
-              name="reservedPrice"
-              type="number"
-              value={formState.reservedPrice}
+              errorMessage={fieldErrors?.imageUrl?.[0]}
+              label="Image URL"
+              name="imageUrl"
+              value={formState.imageUrl}
               onChange={handleChange}
             />
-            <Input
-              errorMessage={fieldErrors?.auctionEnd?.[0]}
-              label="Auction End"
-              name="auctionEnd"
-              type="datetime-local"
-              value={formState.auctionEnd}
-              onChange={handleChange}
-            />
-          </div>
+          )}
+          {isCreating && (
+            <div className="grid grid-cols-2 gap-3">
+              <Input
+                errorMessage={fieldErrors?.reservedPrice?.[0]}
+                label="Reserve Price"
+                name="reservedPrice"
+                type="number"
+                value={formState.reservedPrice}
+                onChange={handleChange}
+              />
+              <Input
+                errorMessage={fieldErrors?.auctionEnd?.[0]}
+                label="Auction End"
+                name="auctionEnd"
+                type="datetime-local"
+                value={formState.auctionEnd}
+                onChange={handleChange}
+              />
+            </div>
+          )}
         </div>
         <div className="mt-3 flex justify-between">
           <Button

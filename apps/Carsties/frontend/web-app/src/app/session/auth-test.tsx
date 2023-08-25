@@ -2,25 +2,14 @@
 import { Button } from '@nextui-org/button';
 import { JSX, useState } from 'react';
 
-import {
-  updateAuctionTest,
-  UpdateAuctionTestReturn,
-} from '../actions/auction-actions';
-
 export function AuthTest(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<UpdateAuctionTestReturn>();
+  const [result, setResult] = useState<{ id: string }>();
 
   const handleUpdate = (): void => {
     setIsLoading(true);
 
-    updateAuctionTest()
-      .then(data => {
-        setResult(data);
-      })
-      .finally(() => {
-        return setIsLoading(false);
-      });
+    setResult({ id: '1' });
   };
 
   return (

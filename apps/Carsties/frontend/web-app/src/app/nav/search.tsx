@@ -1,11 +1,15 @@
 'use client';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Input } from '@nextui-org/input';
+import { usePathname, useRouter } from 'next/navigation';
 import { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 
 export function Search(): JSX.Element {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const setParameters = useParameterStore(state => {
     return state.setParameters;
   });
@@ -26,6 +30,10 @@ export function Search(): JSX.Element {
       value={searchTerm}
       variant="bordered"
       onValueChange={(value): void => {
+        if (pathname !== '/') {
+          router.push('/');
+        }
+
         return setSearchTerm(value);
       }}
     />

@@ -1,3 +1,4 @@
+import { isNil } from 'lodash';
 import { NextApiRequest } from 'next';
 import { cookies, headers } from 'next/headers';
 import { getServerSession, Session } from 'next-auth';
@@ -21,6 +22,23 @@ export async function getCurrentUser(): Promise<Session['user'] | null> {
   } catch {
     return null;
   }
+}
+
+export async function getDefaultHeaders(): Promise<HeadersInit> {
+  const token = await getTokenWorkaround();
+
+  let headers: HeadersInit = {
+    'Content-Type': 'application/json',
+  };
+
+  if (!isNil(token)) {
+    headers = {
+      ...headers,
+      Authorization: `Bearer ${token.access_token}`,
+    };
+  }
+
+  return headers;
 }
 
 export async function getTokenWorkaround(): Promise<JWT | null> {
