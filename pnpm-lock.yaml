@@ -25,8 +25,8 @@ importers:
   apps/Carsties/frontend/web-app:
     dependencies:
       '@ethang/fetch':
-        specifier: ^3.4.1
-        version: 3.4.1(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
+        specifier: ^3.5.0
+        version: 3.5.0(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
       '@ethang/url':
         specifier: ^1.0.1
         version: 1.0.1
@@ -319,8 +319,8 @@ packages:
     resolution: {integrity: sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/fetch@3.4.1(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
-    resolution: {integrity: sha512-wT4+6CyDYSp9USWNegYCX4mJcyrJbbO58h1dybHgyGECfW3c0SWZV+t4CQ2KAPogq+qsLf3SWkIOpSyEs9fz6A==}
+  /@ethang/fetch@3.5.0(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
+    resolution: {integrity: sha512-BcT9BpUkIZafjn+4TYUL+U327xqkPcQLTmJH2pnq5xWYl4O7HYjlN49KbA/BG/lU2RNFVBA9o+AHDEeeXKajYg==}
     peerDependencies:
       idb: ^7.1.1
       lodash: ^4.17.21

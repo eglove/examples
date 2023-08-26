@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ethang/fetch": "^3.4.1",
+    "@ethang/fetch": "^3.5.0",
     "@ethang/url": "^1.0.1",
     "@ethang/use-form": "^1.4.22",
     "@heroicons/react": "^2.0.18",
