@@ -2,7 +2,7 @@
 
 import { Button } from '@nextui-org/button';
 import { signIn } from 'next-auth/react';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 export function Login(): JSX.Element {
   return (

@@ -6,7 +6,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/solid';
 import { Select, SelectItem } from '@nextui-org/select';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 

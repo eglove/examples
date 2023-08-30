@@ -1,6 +1,7 @@
 'use client';
 import { Button } from '@nextui-org/button';
-import { JSX, useState } from 'react';
+import type { JSX } from 'react';
+import { useState } from 'react';
 
 export function AuthTest(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);

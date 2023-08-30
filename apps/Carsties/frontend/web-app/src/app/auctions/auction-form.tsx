@@ -5,11 +5,12 @@ import { Input } from '@nextui-org/input';
 import { isEmpty } from 'lodash';
 import { DateTime } from 'luxon';
 import { usePathname, useRouter } from 'next/navigation';
-import { JSX, useState } from 'react';
+import type { JSX } from 'react';
+import { useState } from 'react';
 import { z } from 'zod';
 
 import { createAuction, updateAuction } from '../../../lib/requests';
-import { auctionSchema } from './schema';
+import type { auctionSchema } from './schema';
 
 type AuctionFormProperties = {
   readonly auction?: z.output<typeof auctionSchema>;

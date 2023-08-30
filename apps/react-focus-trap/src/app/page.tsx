@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import MainClass from '@/app/(components)/main-class';
+import MainClass from './(components)/main-class';
 
 export default function Home(): ReactNode {
   return (

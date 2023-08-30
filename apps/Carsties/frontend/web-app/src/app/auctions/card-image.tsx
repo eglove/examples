@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
-import { JSX, useState } from 'react';
+import type { JSX } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type CardImageProperties = {

@@ -1,6 +1,6 @@
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 type EditButtonProperties = {
   readonly id: string;

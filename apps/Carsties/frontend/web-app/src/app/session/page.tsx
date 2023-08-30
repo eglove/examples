@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { getSession, getTokenWorkaround } from '../actions/auth-actions';
 import { Heading } from '../components/heading';

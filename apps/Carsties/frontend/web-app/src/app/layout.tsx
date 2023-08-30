@@ -2,7 +2,7 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { JSX, PropsWithChildren } from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 
 import { ClientProviders } from './client-providers';
 import { Navbar } from './nav/navbar';

@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { Heading } from '../../components/heading';
 import { AuctionForm } from '../auction-form';

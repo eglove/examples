@@ -1,7 +1,8 @@
 'use client';
 import { debounce, isNil } from 'lodash';
-import { JSX, useEffect, useState } from 'react';
-import { z } from 'zod';
+import type { JSX } from 'react';
+import { useEffect, useState } from 'react';
+import type { z } from 'zod';
 
 import { api } from '../../../lib/api';
 import { AppPagination } from '../components/app-pagination';
@@ -9,7 +10,7 @@ import { EmptyFilter } from '../components/empty-filter';
 import { useParameterStore } from '../hooks/use-parameter-store';
 import { AuctionCard } from './auction-card';
 import { Filter } from './filter';
-import { auctionsSchema } from './schema';
+import type { auctionsSchema } from './schema';
 
 export function Listings(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);

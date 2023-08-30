@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { api } from '../../../../../lib/api';
 import { Heading } from '../../../components/heading';

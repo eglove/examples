@@ -1,7 +1,8 @@
 'use client';
 import { Button } from '@nextui-org/button';
 import { useRouter } from 'next/navigation';
-import { JSX, useState } from 'react';
+import type { JSX } from 'react';
+import { useState } from 'react';
 
 import { deleteAuction } from '../../../../../lib/requests';
 

@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type HeadingProperties = {

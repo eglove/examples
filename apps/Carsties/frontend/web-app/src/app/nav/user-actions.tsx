@@ -15,9 +15,9 @@ import {
 } from '@nextui-org/dropdown';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Session } from 'next-auth';
+import type { Session } from 'next-auth';
 import { signOut } from 'next-auth/react';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 

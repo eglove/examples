@@ -1,7 +1,8 @@
 'use client';
-import { JSX, useEffect, useRef, useState } from 'react';
+import type { JSX } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { focusTrap } from '@/app/(components)/focus-trap';
+import { focusTrap } from './focus-trap';
 
 export default function Main(): JSX.Element {
   const containerReference = useRef<HTMLDivElement>(null);

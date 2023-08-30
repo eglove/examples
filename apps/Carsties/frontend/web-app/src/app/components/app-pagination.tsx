@@ -1,5 +1,5 @@
 import { Pagination } from '@nextui-org/pagination';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 

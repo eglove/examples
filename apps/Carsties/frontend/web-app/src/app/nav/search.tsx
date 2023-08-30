@@ -2,7 +2,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Input } from '@nextui-org/input';
 import { usePathname, useRouter } from 'next/navigation';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 

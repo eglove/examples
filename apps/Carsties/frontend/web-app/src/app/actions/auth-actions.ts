@@ -1,8 +1,10 @@
 import { isNil } from 'lodash';
-import { NextApiRequest } from 'next';
+import type { NextApiRequest } from 'next';
 import { cookies, headers } from 'next/headers';
-import { getServerSession, Session } from 'next-auth';
-import { getToken, JWT } from 'next-auth/jwt';
+import type { Session } from 'next-auth';
+import { getServerSession } from 'next-auth';
+import type { JWT } from 'next-auth/jwt';
+import { getToken } from 'next-auth/jwt';
 
 import { authOptions } from '../api/auth/[...nextauth]/route';
 

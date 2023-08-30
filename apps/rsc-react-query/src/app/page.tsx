@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { CreatePost } from '../components/create-post/create-post';
 import { Posts } from '../components/posts/posts';

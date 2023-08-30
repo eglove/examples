@@ -1,6 +1,7 @@
 'use client';
 import { useForm } from '@ethang/use-form';
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { api, getRequestKeys } from '../../app/api/api';
 import { queryClient } from '../../app/client-providers';

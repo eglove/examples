@@ -1,7 +1,8 @@
 'use client';
 import { DateTime } from 'luxon';
-import { JSX } from 'react';
-import Countdown, { CountdownRenderProps } from 'react-countdown';
+import type { JSX } from 'react';
+import type { CountdownRenderProps } from 'react-countdown';
+import Countdown from 'react-countdown';
 import { twMerge } from 'tailwind-merge';
 
 function getTimerBackgroundColor(

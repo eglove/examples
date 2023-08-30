@@ -1,7 +1,8 @@
 'use client';
-import { Component, createRef, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { Component, createRef } from 'react';
 
-import { focusTrap } from '@/app/(components)/focus-trap';
+import { focusTrap } from './focus-trap';
 
 export default class MainClass extends Component {
   modalContainerRef = createRef<HTMLDivElement>();

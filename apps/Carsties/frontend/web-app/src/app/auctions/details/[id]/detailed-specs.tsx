@@ -8,10 +8,10 @@ import {
   TableHeader,
   TableRow,
 } from '@nextui-org/table';
-import { JSX } from 'react';
-import { z } from 'zod';
+import type { JSX } from 'react';
+import type { z } from 'zod';
 
-import { auctionSchema } from '../../schema';
+import type { auctionSchema } from '../../schema';
 
 type DetailedSpecsProperties = {
   readonly auction: z.output<typeof auctionSchema>;

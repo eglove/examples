@@ -1,7 +1,7 @@
 'use client';
 
 import { NextUIProvider } from '@nextui-org/system';
-import { JSX, ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 type ClientProvidersProperties = {
   readonly children: ReactNode;

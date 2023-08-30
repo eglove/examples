@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { JSX } from 'react';
-import { z } from 'zod';
+import type { JSX } from 'react';
+import type { z } from 'zod';
 
 import { CardImage } from './card-image';
 import { CountdownTimer } from './countdown-timer';
-import { auctionSchema } from './schema';
+import type { auctionSchema } from './schema';
 
 type AuctionCardProperties = {
   readonly auction: z.output<typeof auctionSchema>;

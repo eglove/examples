@@ -1,7 +1,7 @@
 'use client';
 import { TruckIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/navigation';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 

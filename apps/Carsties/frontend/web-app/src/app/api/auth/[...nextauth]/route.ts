@@ -1,5 +1,6 @@
 import { isNil } from 'lodash';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import type { NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth';
 import DuendeIdentityServer6 from 'next-auth/providers/duende-identity-server6';
 
 export const authOptions: NextAuthOptions = {

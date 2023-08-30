@@ -1,5 +1,5 @@
 import { isNil } from 'lodash';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { getCurrentUser } from '../actions/auth-actions';
 import { Login } from './login';

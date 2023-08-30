@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { api, getRequestKeys } from '../../app/api/api';
 import { postSchema } from '../../app/api/types';

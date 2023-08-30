@@ -1,6 +1,6 @@
 import { Button } from '@nextui-org/button';
 import { signIn } from 'next-auth/react';
-import { JSX } from 'react';
+import type { JSX } from 'react';
 
 import { useParameterStore } from '../hooks/use-parameter-store';
 import { Heading } from './heading';

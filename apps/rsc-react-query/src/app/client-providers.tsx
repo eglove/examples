@@ -1,8 +1,7 @@
 'use client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
-import type { ReactNode } from 'react';
-import { JSX } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 type ProvidersProperties = {
   children: ReactNode;
