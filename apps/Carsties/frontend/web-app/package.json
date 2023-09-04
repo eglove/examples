@@ -31,7 +31,7 @@
     "autoprefixer": "10.4.15",
     "eslint": "^8.48.0",
     "eslint-config-ethang": "^10.0.1",
-    "framer-motion": "^10.16.2",
+    "framer-motion": "^10.16.3",
     "lodash": "^4.17.21",
     "luxon": "^3.4.2",
     "next": "13.4.19",
