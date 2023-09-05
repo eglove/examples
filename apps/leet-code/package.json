@@ -1,0 +1,18 @@
+{
+  "name": "leet-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "20.5.9",
+    "eslint-config-ethang": "^10.0.3",
+    "typescript": "5.2.2",
+    "vitest": "^0.34.3"
+  }
+}
