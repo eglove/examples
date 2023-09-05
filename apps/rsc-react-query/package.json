@@ -9,7 +9,7 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@ethang/use-form": "^1.4.28",
+    "@ethang/use-form": "^1.4.29",
     "@tanstack/react-query": "^4.33.0",
     "@tanstack/react-query-next-experimental": "5.0.0-alpha.80",
     "@types/node": "20.5.9",
@@ -17,7 +17,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "^8.48.0",
-    "eslint-config-ethang": "^10.0.1",
+    "eslint-config-ethang": "^10.0.3",
     "next": "13.4.19",
     "postcss": "8.4.29",
     "react": "18.2.0",
