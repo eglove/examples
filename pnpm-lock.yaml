@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       eslint-config-ethang:
-        specifier: ^10.0.4
-        version: 10.0.4(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
+        specifier: ^10.0.5
+        version: 10.0.5(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
     devDependencies:
       '@turbo/gen':
         specifier: ^1.10.13
@@ -25,14 +25,14 @@ importers:
   apps/Carsties/frontend/web-app:
     dependencies:
       '@ethang/fetch':
-        specifier: ^3.5.10
-        version: 3.5.10(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
+        specifier: ^3.5.11
+        version: 3.5.11(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
       '@ethang/url':
         specifier: ^1.0.1
         version: 1.0.1
       '@ethang/use-form':
-        specifier: ^1.4.30
-        version: 1.4.30(react@18.2.0)(zod@3.22.2)
+        specifier: ^1.4.31
+        version: 1.4.31(react@18.2.0)(zod@3.22.2)
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
@@ -88,8 +88,8 @@ importers:
         specifier: ^8.49.0
         version: 8.49.0
       eslint-config-ethang:
-        specifier: ^10.0.4
-        version: 10.0.4(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
+        specifier: ^10.0.5
+        version: 10.0.5(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
       framer-motion:
         specifier: ^10.16.4
         version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -169,8 +169,8 @@ importers:
   apps/rsc-react-query:
     dependencies:
       '@ethang/use-form':
-        specifier: ^1.4.30
-        version: 1.4.30(react@18.2.0)(zod@3.22.2)
+        specifier: ^1.4.31
+        version: 1.4.31(react@18.2.0)(zod@3.22.2)
       '@tanstack/react-query':
         specifier: ^4.35.0
         version: 4.35.0(react-dom@18.2.0)(react@18.2.0)
@@ -193,8 +193,8 @@ importers:
         specifier: ^8.49.0
         version: 8.49.0
       eslint-config-ethang:
-        specifier: ^10.0.4
-        version: 10.0.4(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
+        specifier: ^10.0.5
+        version: 10.0.5(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2)
       next:
         specifier: 13.4.19
         version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -319,8 +319,8 @@ packages:
     resolution: {integrity: sha512-1S8uAY/MTJqVx0SC4epBq+N2yhuwtNwLbJYNZyhL2pO1ZVKn5HFXav5T41Ryzy9K9V7ZId2JB2oy/W4aCd9/2w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/fetch@3.5.10(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
-    resolution: {integrity: sha512-3H7AR6ga37OgPycooxJD3nae8awlnw1F9VJ6XilWtFO9+GjKcsc8GMSbJZrd9OzlEYk7vLKf0ZBJb/ouxCqIOA==}
+  /@ethang/fetch@3.5.11(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
+    resolution: {integrity: sha512-y4piRCbiPIt38NFCdkTYnYjoug5NnbX59wDnHXvmmT2yVhpIunZ2Pj2XzHB4Hr2NskzGrYFhO0SeZFc7xecTww==}
     peerDependencies:
       idb: ^7.1.1
       lodash: ^4.17.21
@@ -335,8 +335,8 @@ packages:
     resolution: {integrity: sha512-HYVbbaI40w2Jh+IpQsUMgJY2Msrl3O3uKSCYb/E7kRbYZM89H0cWd86C6yKrp8C6E4X+RTm1BbJhHSRCNv/1GA==}
     dev: false
 
-  /@ethang/use-form@1.4.30(react@18.2.0)(zod@3.22.2):
-    resolution: {integrity: sha512-DJfTnPChCeYx/+ZF580MEfH3ILx4xqyUUCFx5UebV6nCRpXiYmiIlL0c+49xRjMxI9bOukzXXH0nuC4iXeshuQ==}
+  /@ethang/use-form@1.4.31(react@18.2.0)(zod@3.22.2):
+    resolution: {integrity: sha512-hdqqblKZityjSRFN2Jns0p8Wvn/YYwJ3zLDu3z7c/ureofjYzK2wWH7l4L7AAVZiTmter3A9BbWg709QlBX3Sw==}
     peerDependencies:
       react: ^18.2.0
       zod: ^3.21.4
@@ -2983,8 +2983,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-ethang@10.0.4(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2):
-    resolution: {integrity: sha512-jQPgUcTiIIa4s5WB4z2Zl9LLbXQCYGLkayP/s2ytQtGGTNq8GVkEYa6R2/yGhBM22DprCb1v9eCzJWvWSPQspw==}
+  /eslint-config-ethang@10.0.5(eslint@8.49.0)(prettier@3.0.3)(tailwindcss@3.3.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-diTfKetsTiYy3wwYdva8Fi5H8HCDbKzCw60TsImnGTqvrZIeqvGHj39jfw8c/ny/6bUytP4j5wdAIOOAqMLVwA==}
     peerDependencies:
       eslint: ^8.49.0
       prettier: ^3.0.3
