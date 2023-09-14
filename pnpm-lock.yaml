@@ -25,14 +25,14 @@ importers:
   apps/Carsties/frontend/web-app:
     dependencies:
       '@ethang/fetch':
-        specifier: ^3.5.12
-        version: 3.5.12(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
+        specifier: ^3.5.13
+        version: 3.5.13(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2)
       '@ethang/url':
         specifier: ^1.0.1
         version: 1.0.1
       '@ethang/use-form':
-        specifier: ^1.4.32
-        version: 1.4.32(react@18.2.0)(zod@3.22.2)
+        specifier: ^1.4.33
+        version: 1.4.33(react@18.2.0)(zod@3.22.2)
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
@@ -169,8 +169,8 @@ importers:
   apps/rsc-react-query:
     dependencies:
       '@ethang/use-form':
-        specifier: ^1.4.32
-        version: 1.4.32(react@18.2.0)(zod@3.22.2)
+        specifier: ^1.4.33
+        version: 1.4.33(react@18.2.0)(zod@3.22.2)
       '@tanstack/react-query':
         specifier: ^4.35.3
         version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
@@ -319,8 +319,8 @@ packages:
     resolution: {integrity: sha512-1S8uAY/MTJqVx0SC4epBq+N2yhuwtNwLbJYNZyhL2pO1ZVKn5HFXav5T41Ryzy9K9V7ZId2JB2oy/W4aCd9/2w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/fetch@3.5.12(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
-    resolution: {integrity: sha512-gx0Qc4shYeYbZjahNjTzVrfV+ObdOaEp3K255IZLHhnC7bc3FQyT0xSHjCYk7U682WoFpKsY+1H4mEZuVtY+zw==}
+  /@ethang/fetch@3.5.13(idb@7.1.1)(lodash@4.17.21)(zod@3.22.2):
+    resolution: {integrity: sha512-hRCvaEq39bGfWbBIn2gn07ucdsHY6lPOubAActSoqhAhLci4RBqB9pR5P9Y+3yQv36CrTc7PVL45JhBqJslgsQ==}
     peerDependencies:
       idb: ^7.1.1
       lodash: ^4.17.21
@@ -335,8 +335,8 @@ packages:
     resolution: {integrity: sha512-HYVbbaI40w2Jh+IpQsUMgJY2Msrl3O3uKSCYb/E7kRbYZM89H0cWd86C6yKrp8C6E4X+RTm1BbJhHSRCNv/1GA==}
     dev: false
 
-  /@ethang/use-form@1.4.32(react@18.2.0)(zod@3.22.2):
-    resolution: {integrity: sha512-mn/T1a68m0a1geJzPEC6xQJz6Go3jU9duzIy5Qg0rComsh9EmIQ2RLW2gQ67ghrbZnzLnDzyYHo6+2r0wfTu9w==}
+  /@ethang/use-form@1.4.33(react@18.2.0)(zod@3.22.2):
+    resolution: {integrity: sha512-cxIiwdD1FPOqjqPUP0enWbleSijRgsbqWm7lafVzJKvgVyfDprqH7LQsvslvfGtqIO8qjHgMs0Oa9O+OY/rEVA==}
     peerDependencies:
       react: ^18.2.0
       zod: ^3.21.4
