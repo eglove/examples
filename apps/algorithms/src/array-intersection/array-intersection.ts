@@ -14,7 +14,7 @@ export function arrayIntersection(
   return intersectionArray;
 }
 
-// O(n)
+// O(n) 47x faster
 export function arrayIntersectionSet(
   array1: number[],
   array2: number[],
