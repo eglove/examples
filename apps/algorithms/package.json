@@ -1,0 +1,21 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:bench": "vitest bench --run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@types/node": "20.6.0",
+    "eslint-config-ethang": "^10.0.6",
+    "typescript": "5.2.2",
+    "vitest": "^0.34.4"
+  }
+}
