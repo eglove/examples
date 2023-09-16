@@ -1,7 +1,11 @@
 import { bench, describe } from 'vitest';
 
 import { randomString } from '../util';
-import { reverseString, reverseStringBuiltIn } from './reverse-string';
+import {
+  reverseString,
+  reverseStringBuiltIn,
+  reverseStringRecursive,
+} from './reverse-string';
 
 describe('reverse string', () => {
   bench('string builder', () => {
@@ -10,5 +14,9 @@ describe('reverse string', () => {
 
   bench('built in', () => {
     reverseStringBuiltIn(randomString());
+  });
+
+  bench('recursive', () => {
+    reverseStringRecursive(randomString());
   });
 });
