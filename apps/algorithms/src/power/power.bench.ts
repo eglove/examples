@@ -1,10 +1,19 @@
 import { bench, describe } from 'vitest';
 
-import { powerBuiltIn, powerIterative, powerRecursive } from './power';
+import {
+  powerBuiltIn,
+  powerHalf,
+  powerIterative,
+  powerRecursive,
+} from './power';
 
 describe('power', () => {
   bench('recursive', () => {
     powerRecursive(100, 100);
+  });
+
+  bench('half', () => {
+    powerHalf(100, 100);
   });
 
   bench('built in', () => {

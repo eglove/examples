@@ -1,6 +1,11 @@
 import { assert, describe, it } from 'vitest';
 
-import { powerBuiltIn, powerIterative, powerRecursive } from './power';
+import {
+  powerBuiltIn,
+  powerHalf,
+  powerIterative,
+  powerRecursive,
+} from './power';
 
 const testCases = [
   [2, 3, 8],
@@ -11,6 +16,10 @@ const testCases = [
 describe('power', () => {
   it.each(testCases)('should work', (base, exponent, result) => {
     assert.equal(powerRecursive(base, exponent), result);
+  });
+
+  it.each(testCases)('should work', (base, exponent, result) => {
+    assert.equal(powerHalf(base, exponent), result);
   });
 
   it.each(testCases)('should work', (base, exponent, result) => {
