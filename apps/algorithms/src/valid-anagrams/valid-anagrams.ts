@@ -1,3 +1,4 @@
+// Time Complexity: O(n)
 export function validAnagrams(string1: string, string2: string): boolean {
   if (string1.length !== string2.length) {
     return false;
@@ -20,4 +21,9 @@ export function validAnagrams(string1: string, string2: string): boolean {
   }
 
   return true;
+}
+
+// Time Complexity: O(n log(n))
+export function validAnagramsSort(string1: string, string2: string): boolean {
+  return [...string1].sort().join('') === [...string2].sort().join('');
 }
