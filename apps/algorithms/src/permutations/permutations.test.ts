@@ -9,10 +9,10 @@ const testCases: Array<[string, string[]]> = [
 
 describe('permutations', () => {
   it.each(testCases)('recursive', (string, result) => {
-    assert.deepEqual(permutationsRecursive(string).sort(), result);
+    assert.deepEqual(permutationsRecursive(string).toSorted(), result);
   });
 
   it.each(testCases)('optimized', (string, result) => {
-    assert.deepEqual(permutationsOptimized(string).sort(), result);
+    assert.deepEqual(permutationsOptimized(string).toSorted(), result);
   });
 });

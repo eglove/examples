@@ -12,7 +12,7 @@ function rolleDice(): number {
 }
 
 export function diceGameSimulation(numberOfSimulations: number): Simulation[] {
-  const results: Simulation[] = [];
+  let results: Simulation[] = [];
 
   for (let index = 0; index < numberOfSimulations; index++) {
     const dice1 = rolleDice();
@@ -28,12 +28,15 @@ export function diceGameSimulation(numberOfSimulations: number): Simulation[] {
       result = 'lose';
     }
 
-    results.push({
-      dice1,
-      dice2,
-      result,
-      sum,
-    });
+    results = [
+      ...results,
+      {
+        dice1,
+        dice2,
+        result,
+        sum,
+      },
+    ];
   }
 
   return results;
@@ -42,7 +45,7 @@ export function diceGameSimulation(numberOfSimulations: number): Simulation[] {
 export function diceGameSimulationSwitch(
   numberOfSimulations: number,
 ): Simulation[] {
-  const results: Simulation[] = [];
+  let results: Simulation[] = [];
 
   for (let index = 0; index < numberOfSimulations; index++) {
     const dice1 = rolleDice();
@@ -69,12 +72,15 @@ export function diceGameSimulationSwitch(
       }
     }
 
-    results.push({
-      dice1,
-      dice2,
-      result,
-      sum,
-    });
+    results = [
+      ...results,
+      {
+        dice1,
+        dice2,
+        result,
+        sum,
+      },
+    ];
   }
 
   return results;

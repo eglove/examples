@@ -4,14 +4,14 @@ export function symmetricDifference(
 ): number[] {
   const unique1 = new Set(array1);
   const unique2 = new Set(array2);
-  const result: number[] = [];
+  let result: number[] = [];
 
   for (const number of [...array1, ...array2]) {
     if (unique1.has(number) && unique2.has(number)) {
       continue;
     }
 
-    result.push(number);
+    result = [...result, number];
   }
 
   return result;

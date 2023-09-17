@@ -1,5 +1,5 @@
 export function fizzBuzz(number: number): Array<string | number> {
-  const result = [];
+  let result: Array<string | number> = [];
 
   for (let index = 1; index <= number; index++) {
     let string = '';
@@ -12,11 +12,7 @@ export function fizzBuzz(number: number): Array<string | number> {
       string += 'Buzz';
     }
 
-    if (string === '') {
-      result.push(index);
-    } else {
-      result.push(string);
-    }
+    result = string === '' ? [...result, index] : [...result, string];
   }
 
   return result;
@@ -25,30 +21,30 @@ export function fizzBuzz(number: number): Array<string | number> {
 export function fizzBuzzLeastCommonDenominator(
   number: number,
 ): Array<string | number> {
-  const result = [];
+  let result: Array<string | number> = [];
 
   for (let index = 1; index <= number; index++) {
     switch (0) {
       case index % 15: {
-        result.push('FizzBuzz');
+        result = [...result, 'FizzBuzz'];
 
         break;
       }
 
       case index % 3: {
-        result.push('Fizz');
+        result = [...result, 'Fizz'];
 
         break;
       }
 
       case index % 5: {
-        result.push('Buzz');
+        result = [...result, 'Buzz'];
 
         break;
       }
 
       default: {
-        result.push(index);
+        result = [...result, index];
       }
     }
   }

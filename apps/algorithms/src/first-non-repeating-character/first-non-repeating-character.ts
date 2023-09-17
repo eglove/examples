@@ -1,8 +1,11 @@
 export function firstNonRepeatingCharacter(string: string): string | null {
-  const found: Record<string, number> = {};
+  let found: Record<string, number> = {};
 
   for (const character of string) {
-    found[character] = (found[character] ?? 0) + 1;
+    found = {
+      ...found,
+      [character]: (found[character] ?? 0) + 1,
+    };
   }
 
   for (const [character, count] of Object.entries(found)) {

@@ -19,14 +19,17 @@ export function hasAllUniqueCharactersSizeCompare(string: string): boolean {
 }
 
 export function hasAllUniqueCharactersObject(string: string): boolean {
-  const charCount: Record<string, boolean> = {};
+  let charCount: Record<string, boolean> = {};
 
   for (const character of string) {
     if (charCount[character]) {
       return false;
     }
 
-    charCount[character] = true;
+    charCount = {
+      ...charCount,
+      [character]: true,
+    };
   }
 
   return true;

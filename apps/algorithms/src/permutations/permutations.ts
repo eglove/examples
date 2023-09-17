@@ -1,8 +1,8 @@
 export function permutationsRecursive(string: string): string[] {
-  const result = [];
+  let result: string[] = [];
 
   if (string.length === 0) {
-    result.push('');
+    result = [...result, ''];
     return result;
   }
 
@@ -12,7 +12,7 @@ export function permutationsRecursive(string: string): string[] {
     const subPermutations = permutationsRecursive(restOfString);
 
     for (const subPermutation of subPermutations) {
-      result.push(firstCharacter + subPermutation);
+      result = [...result, firstCharacter + subPermutation];
     }
   }
 
@@ -20,12 +20,12 @@ export function permutationsRecursive(string: string): string[] {
 }
 
 export function permutationsOptimized(string: string): string[] {
-  const result: string[] = [];
+  let result: string[] = [];
   generate(string.length, [...string]);
 
   function generate(length: number, chars: string[]): void {
     if (length === 1) {
-      result.push(chars.join(''));
+      result = [...result, chars.join('')];
     } else {
       for (let index = 0; index < length - 1; index++) {
         generate(length - 1, chars);

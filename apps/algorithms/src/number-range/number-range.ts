@@ -1,8 +1,8 @@
 export function numberRange(startNumber: number, endNumber: number): number[] {
-  const result = [];
+  let result: number[] = [];
 
   for (let index = startNumber; index <= endNumber; index++) {
-    result.push(index);
+    result = [...result, index];
   }
 
   return result;
@@ -16,7 +16,7 @@ export function numberRangeRecursive(
     return [startNumber];
   }
 
-  const numbers = numberRangeRecursive(startNumber, endNumber - 1);
-  numbers.push(endNumber);
+  let numbers = numberRangeRecursive(startNumber, endNumber - 1);
+  numbers = [...numbers, endNumber];
   return numbers;
 }

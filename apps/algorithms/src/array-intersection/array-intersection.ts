@@ -3,11 +3,11 @@ export function arrayIntersection(
   array1: number[],
   array2: number[],
 ): number[] {
-  const intersectionArray: number[] = [];
+  let intersectionArray: number[] = [];
 
   for (const number of array1) {
     if (array2.includes(number) && !intersectionArray.includes(number)) {
-      intersectionArray.push(number);
+      intersectionArray = [...intersectionArray, number];
     }
   }
 

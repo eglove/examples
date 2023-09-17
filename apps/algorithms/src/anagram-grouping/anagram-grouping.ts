@@ -5,7 +5,11 @@ export function anagramGrouping(words: string[]): string[][] {
     const sortedCharacters = [...word].toSorted().join('');
 
     if (groups.has(sortedCharacters)) {
-      groups.get(sortedCharacters)?.push(word);
+      const group = groups.get(sortedCharacters);
+
+      if (group) {
+        groups.set(sortedCharacters, [...group, word]);
+      }
     } else {
       groups.set(sortedCharacters, [word]);
     }

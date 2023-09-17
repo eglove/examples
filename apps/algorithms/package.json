@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vitest run",
     "test:bench": "vitest bench --run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "lint": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
