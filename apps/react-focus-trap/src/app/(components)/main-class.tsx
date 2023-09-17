@@ -5,26 +5,26 @@ import { Component, createRef } from 'react';
 import { focusTrap } from './focus-trap';
 
 export default class MainClass extends Component {
-  modalContainerRef = createRef<HTMLDivElement>();
-  closeButtonRef = createRef<HTMLButtonElement>();
-  enterRef = createRef<HTMLDivElement>();
+  private readonly modalContainerRef = createRef<HTMLDivElement>();
+  private readonly closeButtonRef = createRef<HTMLButtonElement>();
+  private readonly enterRef = createRef<HTMLDivElement>();
 
-  state = {
+  public state = {
     isDialogOpen: false,
   };
 
-  handleTrapFocus = (): void => {
+  private readonly handleTrapFocus = (): void => {
     if (this.modalContainerRef.current) {
       this.closeButtonRef.current?.focus();
       focusTrap(this.modalContainerRef.current);
     }
   };
 
-  handleEnterRefFocus = (): void => {
+  private readonly handleEnterRefFocus = (): void => {
     this.enterRef.current?.focus();
   };
 
-  handleToggleDialog = (): void => {
+  private readonly handleToggleDialog = (): void => {
     this.setState(
       previousState => {
         return {
@@ -44,7 +44,7 @@ export default class MainClass extends Component {
     );
   };
 
-  render(): ReactNode {
+  public render(): ReactNode {
     return (
       <div className="relative">
         <div className="m-2 flex gap-2">
