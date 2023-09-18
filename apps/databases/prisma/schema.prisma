@@ -1,0 +1,232 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  category     Int    @id @default(autoincrement())
+  categoryname String @db.VarChar(50)
+}
+
+model city {
+  id          Int       @id
+  name        String
+  countrycode String    @db.Char(3)
+  district    String
+  population  Int
+  country     country[]
+
+  @@index([countrycode], map: "idx_countrycode", type: Hash)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model country {
+  code            String            @id @db.Char(3)
+  name            String
+  continent       String
+  region          String
+  surfacearea     Float             @db.Real
+  indepyear       Int?              @db.SmallInt
+  population      Int
+  lifeexpectancy  Float?            @db.Real
+  gnp             Decimal?          @db.Decimal(10, 2)
+  gnpold          Decimal?          @db.Decimal(10, 2)
+  localname       String
+  governmentform  String
+  headofstate     String?
+  capital         Int?
+  code2           String            @db.Char(2)
+  city            city?             @relation(fields: [capital], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  countrylanguage countrylanguage[]
+}
+
+model countrylanguage {
+  countrycode String  @db.Char(3)
+  language    String
+  isofficial  Boolean
+  percentage  Float   @db.Real
+  country     country @relation(fields: [countrycode], references: [code], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([countrycode, language])
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model cust_hist {
+  customerid Int
+  orderid    Int
+  prod_id    Int
+  customers  customers @relation(fields: [customerid], references: [customerid], onDelete: Cascade, onUpdate: NoAction, map: "fk_cust_hist_customerid")
+
+  @@index([customerid], map: "ix_cust_hist_customerid")
+  @@ignore
+}
+
+model customers {
+  customerid           Int         @id @default(autoincrement())
+  firstname            String      @db.VarChar(50)
+  lastname             String      @db.VarChar(50)
+  address1             String      @db.VarChar(50)
+  address2             String?     @db.VarChar(50)
+  city                 String      @db.VarChar(50)
+  state                String?     @db.VarChar(50)
+  zip                  Int?
+  country              String      @db.VarChar(50)
+  region               Int         @db.SmallInt
+  email                String?     @db.VarChar(50)
+  phone                String?     @db.VarChar(50)
+  creditcardtype       Int
+  creditcard           String      @db.VarChar(50)
+  creditcardexpiration String      @db.VarChar(50)
+  username             String      @unique(map: "ix_cust_username") @db.VarChar(50)
+  password             String      @db.VarChar(50)
+  age                  Int?        @db.SmallInt
+  income               Int?
+  gender               String?     @db.VarChar(1)
+  cust_hist            cust_hist[] @ignore
+  orders               orders[]
+}
+
+model departments {
+  dept_no      String         @id @db.Char(4)
+  dept_name    String         @unique @db.VarChar(40)
+  dept_emp     dept_emp[]
+  dept_manager dept_manager[]
+}
+
+model dept_emp {
+  emp_no      Int
+  dept_no     String      @db.Char(4)
+  from_date   DateTime    @db.Date
+  to_date     DateTime    @db.Date
+  departments departments @relation(fields: [dept_no], references: [dept_no], onDelete: Cascade, onUpdate: NoAction)
+  employees   employees   @relation(fields: [emp_no], references: [emp_no], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([emp_no, dept_no])
+  @@index([dept_no])
+}
+
+model dept_manager {
+  dept_no     String      @db.Char(4)
+  emp_no      Int
+  from_date   DateTime    @db.Date
+  to_date     DateTime    @db.Date
+  departments departments @relation(fields: [dept_no], references: [dept_no], onDelete: Cascade, onUpdate: NoAction)
+  employees   employees   @relation(fields: [emp_no], references: [emp_no], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([emp_no, dept_no])
+  @@index([dept_no])
+}
+
+model employees {
+  emp_no       Int            @id
+  birth_date   DateTime       @db.Date
+  first_name   String         @db.VarChar(14)
+  last_name    String         @db.VarChar(16)
+  gender       gender?
+  hire_date    DateTime       @db.Date
+  dept_emp     dept_emp[]
+  dept_manager dept_manager[]
+  salaries     salaries[]
+  titles       titles[]
+}
+
+model inventory {
+  prod_id       Int @id
+  quan_in_stock Int
+  sales         Int
+}
+
+model orderlines {
+  orderlineid Int
+  orderid     Int
+  prod_id     Int
+  quantity    Int      @db.SmallInt
+  orderdate   DateTime @db.Date
+  orders      orders   @relation(fields: [orderid], references: [orderid], onDelete: Cascade, onUpdate: NoAction, map: "fk_orderid")
+
+  @@unique([orderid, orderlineid], map: "ix_orderlines_orderid")
+}
+
+model orders {
+  orderid     Int          @id @default(autoincrement())
+  orderdate   DateTime     @db.Date
+  customerid  Int?
+  netamount   Decimal      @db.Decimal(12, 2)
+  tax         Decimal      @db.Decimal(12, 2)
+  totalamount Decimal      @db.Decimal(12, 2)
+  orderlines  orderlines[]
+  customers   customers?   @relation(fields: [customerid], references: [customerid], onUpdate: NoAction, map: "fk_customerid")
+
+  @@index([customerid], map: "ix_order_custid")
+}
+
+model products {
+  prod_id        Int     @id @default(autoincrement())
+  category       Int
+  title          String  @db.VarChar(50)
+  actor          String  @db.VarChar(50)
+  price          Decimal @db.Decimal(12, 2)
+  special        Int?    @db.SmallInt
+  common_prod_id Int
+
+  @@index([category], map: "ix_prod_category")
+  @@index([special], map: "ix_prod_special")
+}
+
+model regions {
+  id      Int    @unique @default(autoincrement())
+  code    String @unique @db.VarChar(4)
+  capital String @db.VarChar(10)
+  name    String @unique
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model reorder {
+  prod_id        Int
+  date_low       DateTime  @db.Date
+  quan_low       Int
+  date_reordered DateTime? @db.Date
+  quan_reordered Int?
+  date_expected  DateTime? @db.Date
+
+  @@ignore
+}
+
+model salaries {
+  emp_no    Int
+  salary    Int
+  from_date DateTime  @db.Date
+  to_date   DateTime  @db.Date
+  employees employees @relation(fields: [emp_no], references: [emp_no], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([emp_no, from_date])
+}
+
+model titles {
+  emp_no    Int
+  title     String    @db.VarChar(50)
+  from_date DateTime  @db.Date
+  to_date   DateTime? @db.Date
+  employees employees @relation(fields: [emp_no], references: [emp_no], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([emp_no, title, from_date])
+}
+
+model towns {
+  id         Int     @unique @default(autoincrement())
+  code       String  @db.VarChar(10)
+  article    String?
+  name       String
+  department String  @db.VarChar(4)
+
+  @@unique([code, department])
+}
+
+enum gender {
+  M
+  F
+}
