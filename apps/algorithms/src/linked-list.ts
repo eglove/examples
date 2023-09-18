@@ -1,4 +1,4 @@
-class Node<Type> {
+export class Node<Type> {
   public data: Type;
   public next: Node<Type> | null;
 
@@ -110,5 +110,9 @@ export class LinkedList<Type> {
 
   public get head(): typeof this._head {
     return this._head;
+  }
+
+  public get length(): typeof this._length {
+    return this._length;
   }
 }
