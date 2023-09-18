@@ -4,7 +4,10 @@ import { randomString } from '../util';
 import {
   reverseString,
   reverseStringBuiltIn,
+  reverseStringLinkedList,
+  reverseStringQueue,
   reverseStringRecursive,
+  reverseStringStack,
 } from './reverse-string';
 
 describe('reverse string', () => {
@@ -18,5 +21,17 @@ describe('reverse string', () => {
 
   bench('recursive', () => {
     reverseStringRecursive(randomString());
+  });
+
+  bench('stack', () => {
+    reverseStringStack(randomString());
+  });
+
+  bench('queue', () => {
+    reverseStringQueue(randomString());
+  });
+
+  bench('linked list', () => {
+    reverseStringLinkedList(randomString());
   });
 });
