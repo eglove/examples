@@ -19,17 +19,17 @@ export function isBalanced(string: string): boolean {
 }
 
 export function isBalancedArray(string: string): boolean {
-  const stack: string[] = [];
+  let stack: string[] = [];
 
   for (const character of string) {
     if (character === '(') {
-      stack.push(character);
+      stack = [...stack, character];
     } else if (character === ')') {
       if (stack.length === 0) {
         return false;
       }
 
-      stack.pop();
+      stack = stack.slice(0, -1);
     }
   }
 
