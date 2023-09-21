@@ -9,7 +9,7 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@ethang/fetch": "^3.5.18",
+    "@ethang/fetch": "^3.5.19",
     "@ethang/url": "^1.0.1",
     "@ethang/use-form": "^1.4.38",
     "@heroicons/react": "^2.0.18",
@@ -28,7 +28,7 @@
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
+    "autoprefixer": "10.4.16",
     "eslint": "^8.49.0",
     "eslint-config-ethang": "^10.1.6",
     "framer-motion": "^10.16.4",

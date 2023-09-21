@@ -17,6 +17,6 @@
     "@types/node": "20.6.3",
     "eslint-config-ethang": "^10.1.6",
     "typescript": "5.2.2",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   }
 }
