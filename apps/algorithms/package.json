@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.1.0",
-    "@types/node": "20.6.3",
+    "@types/node": "20.6.5",
     "eslint-config-ethang": "^11.0.1",
     "typescript": "5.2.2",
     "vitest": "^0.34.5"
