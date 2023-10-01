@@ -15,6 +15,6 @@
   "packageManager": "pnpm@8.6.10",
   "name": "examples",
   "dependencies": {
-    "eslint-config-ethang": "^11.2.0"
+    "eslint-config-ethang": "^11.2.1"
   }
 }

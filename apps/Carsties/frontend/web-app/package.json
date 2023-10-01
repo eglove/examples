@@ -9,9 +9,9 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@ethang/fetch": "^3.6.13",
+    "@ethang/fetch": "^3.6.14",
     "@ethang/url": "^1.0.1",
-    "@ethang/use-form": "^1.5.7",
+    "@ethang/use-form": "^1.5.8",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/button": "^2.0.21",
     "@nextui-org/divider": "^2.0.20",
@@ -30,7 +30,7 @@
     "@types/react-dom": "18.2.8",
     "autoprefixer": "10.4.16",
     "eslint": "^8.50.0",
-    "eslint-config-ethang": "^11.2.0",
+    "eslint-config-ethang": "^11.2.1",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
     "luxon": "^3.4.3",
