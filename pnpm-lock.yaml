@@ -31,8 +31,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@ethang/use-form':
-        specifier: ^1.5.17
-        version: 1.5.17(react@18.2.0)(zod@3.22.4)
+        specifier: ^1.6.1
+        version: 1.6.1(react@18.2.0)(zod@3.22.4)
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
@@ -525,8 +525,8 @@ packages:
     resolution: {integrity: sha512-HYVbbaI40w2Jh+IpQsUMgJY2Msrl3O3uKSCYb/E7kRbYZM89H0cWd86C6yKrp8C6E4X+RTm1BbJhHSRCNv/1GA==}
     dev: false
 
-  /@ethang/use-form@1.5.17(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-SG9CflFn5SP0hPz/KJpsxT1uj2LxCiZKDMnOvK2cVTvghJuWypC68AOaGl/a14iYmDdLVAbI3a8Uvmuwrrj8hw==}
+  /@ethang/use-form@1.6.1(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-ejLYE+2uxHJSITL0WQ+DME+iQFrLRv2ACg98Y5Zngm2TNsNGAc82G4C1dj+PVWw83oI05vXG61mZlU4oRYvbiA==}
     peerDependencies:
       react: ^18.2.0
       zod: ^3.21.4

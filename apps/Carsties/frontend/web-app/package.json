@@ -11,7 +11,7 @@
   "dependencies": {
     "@ethang/fetch": "^3.6.25",
     "@ethang/url": "^1.0.1",
-    "@ethang/use-form": "^1.5.17",
+    "@ethang/use-form": "^1.6.1",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/button": "^2.0.21",
     "@nextui-org/divider": "^2.0.20",
