@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       eslint-config-ethang:
-        specifier: ^11.2.9
-        version: 11.2.9(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.0.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
+        specifier: ^11.2.10
+        version: 11.2.10(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
     devDependencies:
       '@turbo/gen':
         specifier: ^1.10.15
@@ -25,14 +25,14 @@ importers:
   apps/Carsties/frontend/web-app:
     dependencies:
       '@ethang/fetch':
-        specifier: ^3.6.29
-        version: 3.6.29(idb@7.1.1)(lodash@4.17.21)(zod@3.22.4)
+        specifier: ^3.6.30
+        version: 3.6.30(idb@7.1.1)(lodash@4.17.21)(zod@3.22.4)
       '@ethang/url':
         specifier: ^1.0.1
         version: 1.0.1
       '@ethang/use-form':
-        specifier: ^1.6.5
-        version: 1.6.5(react@18.2.0)(zod@3.22.4)
+        specifier: ^1.6.6
+        version: 1.6.6(react@18.2.0)(zod@3.22.4)
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
@@ -88,8 +88,8 @@ importers:
         specifier: ^8.51.0
         version: 8.51.0
       eslint-config-ethang:
-        specifier: ^11.2.9
-        version: 11.2.9(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.0.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
+        specifier: ^11.2.10
+        version: 11.2.10(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
       framer-motion:
         specifier: ^10.16.4
         version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -142,8 +142,8 @@ importers:
         specifier: 20.8.6
         version: 20.8.6
       eslint-config-ethang:
-        specifier: ^11.2.9
-        version: 11.2.9(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.0.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
+        specifier: ^11.2.10
+        version: 11.2.10(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2)
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -509,8 +509,8 @@ packages:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/fetch@3.6.29(idb@7.1.1)(lodash@4.17.21)(zod@3.22.4):
-    resolution: {integrity: sha512-NDHZZO5eY/QyjpfKOiYCrqgotpYGGs1J6skvtEdxA3g8QL/FENAeORt+9MKArV/7W/ltAdPplLl51l6y4nWpow==}
+  /@ethang/fetch@3.6.30(idb@7.1.1)(lodash@4.17.21)(zod@3.22.4):
+    resolution: {integrity: sha512-Rs8FLrR+8v+6t28E+ui8Ip6jws53RXKFcNn0NehXDaG7pgnKYo0BeEduXwSSdxNrB0+88IIV+dhcxKLf5RJDiQ==}
     peerDependencies:
       idb: ^7.1.1
       lodash: ^4.17.21
@@ -525,8 +525,8 @@ packages:
     resolution: {integrity: sha512-HYVbbaI40w2Jh+IpQsUMgJY2Msrl3O3uKSCYb/E7kRbYZM89H0cWd86C6yKrp8C6E4X+RTm1BbJhHSRCNv/1GA==}
     dev: false
 
-  /@ethang/use-form@1.6.5(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-CrRVXu5nJiHsj9Tjk4Toeo6PUveatHb9p8+DxnfUSGuz7mno4+Frm/854Wt+Q0sRT5Jl9nvOx+vY7gftKiCZXQ==}
+  /@ethang/use-form@1.6.6(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-XhIRORpFCA8PwAKMUxgph/3jWcqu/1lKSljJVO3T+bMnUk0j21hWn9WikjKi7tcRBrW/ONSE+z3Egt8Y7RHU7g==}
     peerDependencies:
       react: ^18.2.0
       zod: ^3.21.4
@@ -3213,7 +3213,7 @@ packages:
       is-string: 1.0.7
       is-typed-array: 1.1.12
       is-weakref: 1.0.2
-      object-inspect: 1.12.3
+      object-inspect: 1.13.0
       object-keys: 1.1.1
       object.assign: 4.1.4
       regexp.prototype.flags: 1.5.1
@@ -3328,8 +3328,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-ethang@11.2.9(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.0.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2):
-    resolution: {integrity: sha512-MBrX3IInePvp8O+BTcDqcz8f9xiUVJxO+L8jXPdM8ESHKnZxb6FKyszk0hAmeCI/jvEH+UZL3cFobGQ61C1/fQ==}
+  /eslint-config-ethang@11.2.10(@typescript-eslint/eslint-plugin@6.7.5)(@typescript-eslint/parser@6.7.5)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.28.1)(eslint-plugin-jsx-a11y@6.7.1)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@48.0.1)(eslint-plugin-unused-imports@3.0.0)(eslint@8.51.0)(prettier@3.0.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-3/a2hc98q5YuYL6+nzWdeE8gCtrr+bFt2kMrbAep3hh8n1zrQPP/1BRZx69X+1sGmEA47UjbrkhXi6GNbx0diw==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.7.5
       '@typescript-eslint/parser': ^6.7.5
@@ -3349,7 +3349,7 @@ packages:
       eslint-plugin-simple-import-sort: ^10.0.0
       eslint-plugin-sort-keys-fix: ^1.1.2
       eslint-plugin-tailwindcss: ^3.13.0
-      eslint-plugin-typescript-sort-keys: ^3.0.0
+      eslint-plugin-typescript-sort-keys: ^3.1.0
       eslint-plugin-unicorn: ^48.0.1
       eslint-plugin-unused-imports: ^3.0.0
       prettier: ^3.0.3
@@ -3374,7 +3374,7 @@ packages:
       eslint-plugin-simple-import-sort: 10.0.0(eslint@8.51.0)
       eslint-plugin-sort-keys-fix: 1.1.2
       eslint-plugin-tailwindcss: 3.13.0(tailwindcss@3.3.3)
-      eslint-plugin-typescript-sort-keys: 3.0.0(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2)
+      eslint-plugin-typescript-sort-keys: 3.1.0(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2)
       eslint-plugin-unicorn: 48.0.1(eslint@8.51.0)
       eslint-plugin-unused-imports: 3.0.0(@typescript-eslint/eslint-plugin@6.7.5)(eslint@8.51.0)
       prettier: 3.0.3
@@ -3661,8 +3661,8 @@ packages:
       tailwindcss: 3.3.3
     dev: false
 
-  /eslint-plugin-typescript-sort-keys@3.0.0(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-bMmI4prYlf3l/1O8j8Nsz11m+XfKEHRFk9aJqP91L4Hgy7I38lnitnYElDmPQaznE1oFlGgBcnkEizNT2NLylQ==}
+  /eslint-plugin-typescript-sort-keys@3.1.0(@typescript-eslint/parser@6.7.5)(eslint@8.51.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-rgZeYfEguqKni/V7sbmgFu9/94UDAQd7YqNd0J7Qhw7SdLIGd0iBk2KgpjhRhe2ge4rPSLDIdFWwUiDqBOst6Q==}
     engines: {node: '>= 16'}
     peerDependencies:
       '@typescript-eslint/parser': ^6
@@ -5117,8 +5117,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /object-inspect@1.12.3:
-    resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
+  /object-inspect@1.13.0:
+    resolution: {integrity: sha512-HQ4J+ic8hKrgIt3mqk6cVOVrW2ozL4KdvHlqpBv9vDYWx9ysAgENAdvy4FoGF+KFdhR7nQTNm5J0ctAeOwn+3g==}
     dev: false
 
   /object-keys@1.1.1:
@@ -5982,7 +5982,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
-      object-inspect: 1.12.3
+      object-inspect: 1.13.0
     dev: false
 
   /siginfo@2.0.0:
