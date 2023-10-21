@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@faker-js/faker": "^8.1.0",
-    "@types/node": "20.8.6",
-    "eslint-config-ethang": "^11.2.10",
+    "@faker-js/faker": "^8.2.0",
+    "@types/node": "20.8.7",
+    "eslint-config-ethang": "^11.2.14",
     "typescript": "5.2.2",
     "vitest": "^0.34.6"
   }
