@@ -1,5 +1,4 @@
 'use client';
-import { isNil } from '@ethang/util/data';
 import { Button } from '@nextui-org/button';
 import { useRouter } from 'next/navigation';
 import type { JSX } from 'react';
@@ -19,11 +18,7 @@ export function DeleteButton({ id }: DeleteButtonProperties): JSX.Element {
   const handleDelete = (): void => {
     setIsLoading(true);
     deleteAuction(id)
-      .then(results => {
-        if (!isNil(results.errors) && results.errors?.length > 0) {
-          throw new Error(results.errors[0]);
-        }
-
+      .then(() => {
         router.push('/');
       })
       .catch(() => {

@@ -1,5 +1,6 @@
 'use client';
 import { useForm } from '@ethang/use-form';
+import { isNil } from '@ethang/util/data';
 import { Button } from '@nextui-org/button';
 import { Input } from '@nextui-org/input';
 import { isEmpty } from 'lodash';
@@ -85,14 +86,18 @@ export function AuctionForm({ auction }: AuctionFormProperties): JSX.Element {
       async onSubmit() {
         setIsLoading(true);
 
-        const { data } = isCreating
+        const data = isCreating
           ? await createAuction(JSON.stringify(createSchema.parse(formState)))
           : await updateAuction(
               JSON.stringify(updateSchema.parse(formState)),
               auction?.id ?? '',
             );
 
-        router.push(`/auctions/details/${isCreating ? data.id : auction?.id}`);
+        if (!isNil(data)) {
+          router.push(
+            `/auctions/details/${isCreating ? data.id : auction?.id}`,
+          );
+        }
       },
       zodValidator: isCreating ? createSchema : updateSchema,
     },
