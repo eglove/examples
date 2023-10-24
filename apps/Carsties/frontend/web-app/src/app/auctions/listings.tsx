@@ -10,7 +10,7 @@ import { EmptyFilter } from '../components/empty-filter';
 import { useParameterStore } from '../hooks/use-parameter-store';
 import { AuctionCard } from './auction-card';
 import { Filter } from './filter';
-import type { auctionsSchema } from './schema';
+import { auctionsSchema } from './schema';
 
 export function Listings(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,8 +45,8 @@ export function Listings(): JSX.Element {
   useEffect(() => {
     setIsLoading(true);
     debounce(async () => {
-      const { data } = await api
-        .fetch('search', {
+      const response = await api.fetch
+        .search({
           searchParams: {
             filterBy,
             orderBy,
@@ -60,6 +60,12 @@ export function Listings(): JSX.Element {
         .finally(() => {
           setIsLoading(false);
         });
+
+      if (isNil(response)) {
+        return;
+      }
+
+      const data = await api.parseJson(response, auctionsSchema);
 
       if (!isNil(data)) {
         setData(data);

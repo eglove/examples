@@ -7,8 +7,8 @@ import { api } from './api';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function createAuction(body: string) {
-  return api.fetch('createAuction', {
-    requestOptions: {
+  return api.fetch.createAuction({
+    requestInit: {
       body,
       headers: await getDefaultHeaders(),
     },
@@ -17,9 +17,9 @@ export async function createAuction(body: string) {
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function updateAuction(body: string, id: string) {
-  const results = await api.fetch('updateAuction', {
-    pathVariables: { id },
-    requestOptions: {
+  const results = await api.fetch.updateAuction({
+    pathVariables: [id],
+    requestInit: {
       body,
       headers: await getDefaultHeaders(),
     },
@@ -32,9 +32,9 @@ export async function updateAuction(body: string, id: string) {
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function deleteAuction(id: string) {
-  const results = await api.fetch('deleteAuction', {
-    pathVariables: { id },
-    requestOptions: {
+  const results = api.fetch.deleteAuction({
+    pathVariables: [id],
+    requestInit: {
       headers: await getDefaultHeaders(),
     },
   });

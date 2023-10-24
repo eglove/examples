@@ -9,7 +9,7 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@ethang/fetch": "^4.2.7",
+    "@ethang/fetch": "^4.2.8",
     "@ethang/url": "^1.0.1",
     "@ethang/use-form": "^1.6.13",
     "@ethang/util": "^1.7.4",
