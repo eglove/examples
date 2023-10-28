@@ -25,8 +25,8 @@ importers:
   apps/Carsties/frontend/web-app:
     dependencies:
       '@ethang/fetch':
-        specifier: ^4.2.11
-        version: 4.2.11(@ethang/util@1.7.5)(idb@7.1.1)(zod@3.22.4)
+        specifier: ^4.2.12
+        version: 4.2.12(@ethang/util@1.7.5)(idb@7.1.1)(zod@3.22.4)
       '@ethang/url':
         specifier: ^1.0.1
         version: 1.0.1
@@ -106,8 +106,8 @@ importers:
         specifier: 13.5.6
         version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
       next-auth:
-        specifier: ^4.24.3
-        version: 4.24.3(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^4.24.4
+        version: 4.24.4(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
       postcss:
         specifier: 8.4.31
         version: 8.4.31
@@ -512,8 +512,8 @@ packages:
     resolution: {integrity: sha512-mjZVbpaeMZludF2fsWLD0Z9gCref1Tk4i9+wddjRvpUNqqcndPkBD09N/Mapey0b3jaXbLm2kICwFv2E64QinA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/fetch@4.2.11(@ethang/util@1.7.5)(idb@7.1.1)(zod@3.22.4):
-    resolution: {integrity: sha512-llxZwErXVaR2PtH/p+NLgdC+4l4SMaYSun6TzBpqQFUkMAYL/vyLqc3wAX3bnC6Gt1Bx1cnIFtdQTtlJcJ3qnA==}
+  /@ethang/fetch@4.2.12(@ethang/util@1.7.5)(idb@7.1.1)(zod@3.22.4):
+    resolution: {integrity: sha512-3vhc396FQufuiSyYg5M4RSXt3s90ykhF6F95rsAAjJJbavsJTdcBUgaqIosLkewAMUTapZY3X8VOq6e1xlCSzQ==}
     peerDependencies:
       '@ethang/util': ^1.7.5
       idb: ^7.1.1
@@ -5088,10 +5088,10 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: true
 
-  /next-auth@4.24.3(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-n1EvmY7MwQMSOkCh6jhI6uBneB6VVtkYELVMEwVaCLD1mBD3IAAucwk+90kgxramW09nSp5drvynwfNCi1JjaQ==}
+  /next-auth@4.24.4(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5DGffi+OpkbU62vPQIJ1z+hFnmow+ec5Qrn9m6eoglIO51m0DlrmLxBduZEwKAYDEg9k2joi1yelgmq1vqK3aQ==}
     peerDependencies:
-      next: ^12.2.5 || ^13
+      next: ^12.2.5 || ^13 || ^14
       nodemailer: ^6.6.5
       react: ^17.0.2 || ^18
       react-dom: ^17.0.2 || ^18
