@@ -9,12 +9,12 @@
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.16",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "turbo": "^1.10.16"
   },
   "packageManager": "pnpm@8.6.10",
   "name": "examples",
   "dependencies": {
-    "eslint-config-ethang": "^11.4.11"
+    "eslint-config-ethang": "^11.4.13"
   }
 }
