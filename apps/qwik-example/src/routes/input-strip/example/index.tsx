@@ -24,7 +24,7 @@ export default component$(() => {
     });
   });
 
-  useVisibleTask$(() => {
+  useVisibleTask$(({ cleanup }) => {
     const handleSubmit = async (event: SubmitEvent) => {
       event.preventDefault();
       worldStore.set(`${worldStore.get()}a`);
@@ -46,6 +46,10 @@ export default component$(() => {
     };
 
     formRef.value?.addEventListener("submit", handleSubmit);
+
+    cleanup(() => {
+      formRef.value?.removeEventListener("submit", handleSubmit);
+    });
   });
 
   return (
