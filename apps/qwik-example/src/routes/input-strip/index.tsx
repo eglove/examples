@@ -1,0 +1,26 @@
+import { component$, useSignal } from "@builder.io/qwik";
+import { Form, routeAction$ } from "@builder.io/qwik-city";
+
+export const useAction = routeAction$((form, event) => {
+  const { hello, signalValue } = form;
+
+  console.log(hello, signalValue);
+
+  throw event.redirect(301, "/input-strip/redirect-to");
+});
+
+export default component$(() => {
+  const signalValue = useSignal("world");
+  const action = useAction();
+
+  return (
+    <div>
+      <h1>Bug: Input Strip</h1>
+      <Form style={{ display: "grid", width: 100, gap: 8 }} action={action}>
+        <input type="text" name={"hello"} value={"hello"} />
+        <input type={"text"} name={"signalValue"} bind:value={signalValue} />
+        <button type={"submit"}>Submit</button>
+      </Form>
+    </div>
+  );
+});
