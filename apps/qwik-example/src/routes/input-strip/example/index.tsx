@@ -13,13 +13,14 @@ export const useAction = routeAction$((form, event) => {
 });
 
 export default component$(() => {
-  const input = useSignal<HTMLInputElement>();
+  const input1Ref = useSignal<HTMLInputElement>();
+  const input2REf = useSignal<HTMLInputElement>();
   const formRef = useSignal<HTMLFormElement>();
 
   useVisibleTask$(() => {
     worldStore.subscribe((value) => {
-      if (input.value) {
-        input.value.value = value;
+      if (input2REf.value) {
+        input2REf.value.value = value;
       }
     });
   });
@@ -31,8 +32,8 @@ export default component$(() => {
       console.log("client", worldStore.get());
 
       const data = new FormData();
-      data.set("hello", "world");
-      data.set("signalValue", worldStore.get());
+      data.set("hello", input1Ref.value?.value ?? "");
+      data.set("signalValue", input2REf.value?.value ?? "");
 
       const response = await fetch(
         "http://localhost:5173/input-strip/q-data.json?qaction=Ktp7xfajduk",
@@ -60,9 +61,9 @@ export default component$(() => {
         style={{ display: "grid", width: 100, gap: 8 }}
         method={"POST"}
       >
-        <input type="text" name={"hello"} value={"hello"} />
+        <input ref={input1Ref} type="text" name={"hello"} value={"hello"} />
         <input
-          ref={input}
+          ref={input2REf}
           type={"text"}
           name={"signalValue"}
           value={worldStore.get()}
