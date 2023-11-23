@@ -4,7 +4,7 @@ import { Form, routeAction$ } from "@builder.io/qwik-city";
 export const useAction = routeAction$((form, event) => {
   const { hello, signalValue } = form;
 
-  console.log(hello, signalValue);
+  console.log("server", signalValue);
 
   throw event.redirect(301, "/input-strip/redirect-to");
 });
@@ -16,7 +16,16 @@ export default component$(() => {
   return (
     <div>
       <h1>Bug: Input Strip</h1>
-      <Form style={{ display: "grid", width: 100, gap: 8 }} action={action}>
+      <Form
+        onSubmit$={(event, form) => {
+          event.preventDefault();
+          signalValue.value += "a";
+          console.log("client", signalValue.value);
+          action.submit({ hello: "hello", signalValue: signalValue.value });
+        }}
+        style={{ display: "grid", width: 100, gap: 8 }}
+        action={action}
+      >
         <input type="text" name={"hello"} value={"hello"} />
         <input type={"text"} name={"signalValue"} bind:value={signalValue} />
         <button type={"submit"}>Submit</button>
