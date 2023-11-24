@@ -17,7 +17,9 @@ export const usePostLoader = routeLoader$(({ url }) => {
 export const useCommentLoader = routeLoader$(({ url }) => {
   const commentPage = url.searchParams.get("comments") ?? DEFAULT_PAGE;
 
-  return commentJson.slice(Number(commentPage), Number(commentPage) + 3);
+  const start = Number(commentPage) * 3;
+
+  return commentJson.slice(start, start + 3);
 });
 
 function setUrlParam(url: URL, key: string, value: string) {
@@ -76,6 +78,7 @@ export default component$(() => {
               "posts",
               String(Number(postPage.value) - 1),
             )}
+            replaceState={true}
             style={{ textDecoration: "underline" }}
           >
             Previous Page
@@ -84,6 +87,7 @@ export default component$(() => {
         <div>Page: {postPage.value}</div>
         {Number(postPage.value) <= postJson.length && (
           <Link
+            replaceState={true}
             scroll={false}
             href={setUrlParam(
               location.url,
