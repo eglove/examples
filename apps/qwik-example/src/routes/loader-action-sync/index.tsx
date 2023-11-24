@@ -69,7 +69,9 @@ export default component$(() => {
 
   return (
     <div>
-      <h1>Loader/Action Sync</h1>
+      <Link href={"/loader-action-sync"}>
+        <h1>Loader/Action Sync</h1>
+      </Link>
       <h2>Posts</h2>
       {posts.value.map((post) => {
         return (
