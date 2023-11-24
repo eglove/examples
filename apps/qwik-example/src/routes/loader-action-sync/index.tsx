@@ -24,22 +24,6 @@ export const useCommentLoader = routeLoader$(({ url }) => {
   return commentJson.slice(Number(commentPage), Number(commentPage) + 3);
 });
 
-export const usePostAction = routeAction$((data, event) => {
-  const postPage = data.posts as string;
-
-  const start = Number(postPage) * 3;
-
-  return postJson.slice(start, start + 3);
-});
-
-export const useCommentAction = routeAction$((data, event) => {
-  const commentPage = data.comments as string;
-
-  const start = Number(commentPage) * 3;
-
-  return commentJson.slice(start, start + 3);
-});
-
 function setUrlParam(url: URL, key: string, value: string) {
   const newUrl = new URL(url);
   newUrl.searchParams.set(key, value);
@@ -50,11 +34,9 @@ export default component$(() => {
   const location = useLocation();
 
   const posts = usePostLoader();
-  const postsAction = usePostAction();
   const postPage = useSignal(DEFAULT_PAGE);
 
   const comments = useCommentLoader();
-  const commentsAction = useCommentAction();
   const commentsPage = useSignal(DEFAULT_PAGE);
 
   useTask$(({ track }) => {
