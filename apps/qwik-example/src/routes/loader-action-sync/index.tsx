@@ -1,10 +1,5 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
-import {
-  Link,
-  routeAction$,
-  routeLoader$,
-  useLocation,
-} from "@builder.io/qwik-city";
+import { Link, routeLoader$, useLocation } from "@builder.io/qwik-city";
 import { default as postJson } from "../../assets/posts.json";
 import { default as commentJson } from "../../assets/comments.json";
 
@@ -12,6 +7,7 @@ const DEFAULT_PAGE = "0";
 
 export const usePostLoader = routeLoader$(({ url }) => {
   const postPage = url.searchParams.get("posts") ?? DEFAULT_PAGE;
+  console.log(postPage);
 
   const start = Number(postPage) * 3;
 
