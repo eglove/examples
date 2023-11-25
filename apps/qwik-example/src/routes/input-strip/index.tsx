@@ -2,7 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { Form, routeAction$ } from "@builder.io/qwik-city";
 
 export const useAction = routeAction$((form, event) => {
-  const { hello, signalValue } = form;
+  const { signalValue } = form;
 
   console.log("server", signalValue);
 
@@ -17,14 +17,13 @@ export default component$(() => {
     <div>
       <h1>Bug: Input Strip</h1>
       <Form
-        onSubmit$={(event, form) => {
+        onSubmit$={(event) => {
           event.preventDefault();
           signalValue.value += "a";
           console.log("client", signalValue.value);
           action.submit({ hello: "hello", signalValue: signalValue.value });
         }}
         style={{ display: "grid", width: 100, gap: 8 }}
-        action={action}
       >
         <input type="text" name={"hello"} value={"hello"} />
         <input type={"text"} name={"signalValue"} bind:value={signalValue} />

@@ -5,7 +5,7 @@ import { atom } from "nanostores";
 const worldStore = atom("world");
 
 export const useAction = routeAction$((form, event) => {
-  const { hello, signalValue } = form;
+  const { signalValue } = form;
 
   console.log("server", signalValue);
 
