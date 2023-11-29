@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       eslint-config-ethang:
-        specifier: ^11.5.6
-        version: 11.5.6(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
+        specifier: ^11.5.7
+        version: 11.5.7(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
     devDependencies:
       '@turbo/gen':
         specifier: ^1.10.16
@@ -25,8 +25,8 @@ importers:
   apps/algorithms:
     dependencies:
       '@ethang/util':
-        specifier: ^2.0.13
-        version: 2.0.13
+        specifier: ^2.0.15
+        version: 2.0.15
       '@faker-js/faker':
         specifier: ^8.3.1
         version: 8.3.1
@@ -34,8 +34,8 @@ importers:
         specifier: 20.10.0
         version: 20.10.0
       eslint-config-ethang:
-        specifier: ^11.5.6
-        version: 11.5.6(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
+        specifier: ^11.5.7
+        version: 11.5.7(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
       typescript:
         specifier: 5.3.2
         version: 5.3.2
@@ -64,8 +64,8 @@ importers:
   apps/next-app:
     dependencies:
       '@ethang/util':
-        specifier: ^2.0.13
-        version: 2.0.13
+        specifier: ^2.0.15
+        version: 2.0.15
       next:
         specifier: 14.0.3
         version: 14.0.3(react-dom@18.2.0)(react@18.2.0)
@@ -144,11 +144,11 @@ importers:
         specifier: ^5.28.1
         version: 5.28.1
       vite:
-        specifier: ^5.0.2
-        version: 5.0.2(@types/node@20.10.0)
+        specifier: ^5.0.4
+        version: 5.0.4(@types/node@20.10.0)
       vite-tsconfig-paths:
         specifier: ^4.2.1
-        version: 4.2.1(typescript@5.3.2)(vite@5.0.2)
+        version: 4.2.1(typescript@5.3.2)(vite@5.0.4)
 
 packages:
 
@@ -164,8 +164,8 @@ packages:
     resolution: {integrity: sha512-jkY7bCVxl27KeZsSxIZ+pqACe+g8VQUdTiSJRj/sXYdIaZlW3ZMq4qF2M17P/oDt3LBq0zLNwQr4Cb7fSpRGxQ==}
     dev: false
 
-  /@babel/code-frame@7.23.4:
-    resolution: {integrity: sha512-r1IONyb6Ia+jYR2vvIDhdWdlTGhqbBoFqLTQidzZ4kepUFH15ejXvFHxCVbtl7BOXIudsIubf4E81xeA3h3IXA==}
+  /@babel/code-frame@7.23.5:
+    resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/highlight': 7.23.4
@@ -658,8 +658,8 @@ packages:
     resolution: {integrity: sha512-ut5V+D+fOoWPgGGNj83GGjnntO39xDy6DWxO0wb7Jp3DcMX0TfIqdzHF85VTQkerdyGmuuMD9AKAo5KiNlf/AQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ethang/util@2.0.13:
-    resolution: {integrity: sha512-3MSUkCiUdrcH5HC7oE+FnbXUfSadDqjgVXg2ovtFqDAdgS5jHAIealrKLsGgLZwNPFi3F4O5hO3YhuGI50s6Gg==}
+  /@ethang/util@2.0.15:
+    resolution: {integrity: sha512-thscNLq8dFTHkK0/brrT9ErJMlWVShUt+sDuGmfRYOZ8YJp06e1bFKEzN9DeyUR/gZJuOBz90G4eLeVQ8jsSsg==}
     dev: false
 
   /@faker-js/faker@8.3.1:
@@ -2525,8 +2525,17 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-ethang@11.5.6(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-j5s3Tqc8VkP/kazOOPYr+YHu0kZdv57WWMjpH22sLdHd8t0QmWtEvF0/N1fZbILIw8ihhbXtlhHqur9lpGOTJQ==}
+  /eslint-compat-utils@0.1.2(eslint@8.54.0):
+    resolution: {integrity: sha512-Jia4JDldWnFNIru1Ehx1H5s9/yxiRHY/TimCuUc0jNexew3cF1gI6CYZil1ociakfWO3rRqFjl1mskBblB3RYg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      eslint: 8.54.0
+    dev: false
+
+  /eslint-config-ethang@11.5.7(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-1kzX1bddRlOoKZeRPpjZSjqjnBICbCfpLxrM7NkG+KjhlzgAqGN16pAXkX3FYeSwzRimay0dLWGtaMKgzwIRWQ==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.13.1
       '@typescript-eslint/parser': ^6.13.1
@@ -2536,7 +2545,7 @@ packages:
       eslint-config-xo-react: ^0.27.0
       eslint-config-xo-space: ^0.34.0
       eslint-config-xo-typescript: ^1.0.1
-      eslint-plugin-astro: ^0.29.1
+      eslint-plugin-astro: ^0.30.0
       eslint-plugin-functional: ^6.0.0
       eslint-plugin-import: ^2.29.0
       eslint-plugin-jsx-a11y: ^6.8.0
@@ -2561,7 +2570,7 @@ packages:
       eslint-config-xo-react: 0.27.0(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.54.0)
       eslint-config-xo-space: 0.34.0(eslint@8.54.0)
       eslint-config-xo-typescript: 1.0.1(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
-      eslint-plugin-astro: 0.29.1(eslint@8.54.0)
+      eslint-plugin-astro: 0.30.0(eslint@8.54.0)
       eslint-plugin-functional: 6.0.0(eslint@8.54.0)(typescript@5.3.2)
       eslint-plugin-import: 2.29.0(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint@8.54.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.54.0)
@@ -2720,8 +2729,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /eslint-plugin-astro@0.29.1(eslint@8.54.0):
-    resolution: {integrity: sha512-ffuUc7zFz8HavaAVaS5iRUzWqBf3/YbrFWUhx0GxXW3gVtnbri5UyvkN8EMOkZWkNXG1zqD2y9dlEsAezhbC0w==}
+  /eslint-plugin-astro@0.30.0(eslint@8.54.0):
+    resolution: {integrity: sha512-LDbbs836SiHqhuiuAF4CPqSSWsfa7R8vfX5lckphCUD/kBFIsobViI8fuTyMktQ9isCg+Q86LIQAHTFl3PWKTA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -2731,6 +2740,7 @@ packages:
       '@typescript-eslint/types': 5.62.0
       astro-eslint-parser: 0.16.0
       eslint: 8.54.0
+      eslint-compat-utils: 0.1.2(eslint@8.54.0)
       postcss: 8.4.31
       postcss-selector-parser: 6.0.13
     transitivePeerDependencies:
@@ -5040,7 +5050,7 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.23.4
+      '@babel/code-frame': 7.23.5
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
@@ -6540,7 +6550,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.2(@types/node@20.10.0)
+      vite: 5.0.4(@types/node@20.10.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6552,7 +6562,7 @@ packages:
       - terser
     dev: false
 
-  /vite-tsconfig-paths@4.2.1(typescript@5.3.2)(vite@5.0.2):
+  /vite-tsconfig-paths@4.2.1(typescript@5.3.2)(vite@5.0.4):
     resolution: {integrity: sha512-GNUI6ZgPqT3oervkvzU+qtys83+75N/OuDaQl7HmOqFTb0pjZsuARrRipsyJhJ3enqV8beI1xhGbToR4o78nSQ==}
     peerDependencies:
       vite: '*'
@@ -6563,7 +6573,7 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.2(typescript@5.3.2)
-      vite: 5.0.2(@types/node@20.10.0)
+      vite: 5.0.4(@types/node@20.10.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6605,8 +6615,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.0.2(@types/node@20.10.0):
-    resolution: {integrity: sha512-6CCq1CAJCNM1ya2ZZA7+jS2KgnhbzvxakmlIjN24cF/PXhRMzpM/z8QgsVJA/Dm5fWUWnVEsmtBoMhmerPxT0g==}
+  /vite@5.0.4(@types/node@20.10.0):
+    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -6692,7 +6702,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 5.0.2(@types/node@20.10.0)
+      vite: 5.0.4(@types/node@20.10.0)
       vite-node: 0.34.6(@types/node@20.10.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
