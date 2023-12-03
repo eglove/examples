@@ -9,13 +9,13 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
-    "@ethang/util": "^2.0.18",
+    "@ethang/util": "^2.0.21",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20.10.2",
+    "@types/node": "^20.10.3",
     "@types/react": "^18.2.41",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
