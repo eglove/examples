@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ethang/util": "^3.0.0",
+    "@ethang/util": "^3.1.0",
     "@faker-js/faker": "^8.3.1",
     "@types/node": "20.10.4",
     "eslint-config-ethang": "^11.5.21",
