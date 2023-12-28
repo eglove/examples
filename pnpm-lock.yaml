@@ -89,8 +89,8 @@ importers:
         specifier: ^20.10.5
         version: 20.10.5
       '@types/react':
-        specifier: ^18.2.45
-        version: 18.2.45
+        specifier: ^18.2.46
+        version: 18.2.46
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
@@ -156,8 +156,8 @@ importers:
         specifier: ^5.0.10
         version: 5.0.10(@types/node@20.10.5)
       vite-tsconfig-paths:
-        specifier: ^4.2.2
-        version: 4.2.2(typescript@5.3.3)(vite@5.0.10)
+        specifier: ^4.2.3
+        version: 4.2.3(typescript@5.3.3)(vite@5.0.10)
 
 packages:
 
@@ -1296,11 +1296,11 @@ packages:
   /@types/react-dom@18.2.18:
     resolution: {integrity: sha512-TJxDm6OfAX2KJWJdMEVTwWke5Sc/E/RlnPGvGfS0W7+6ocy2xhDVQVh/KvC2Uf7kACs+gDytdusDSdWfWkaNzw==}
     dependencies:
-      '@types/react': 18.2.45
+      '@types/react': 18.2.46
     dev: true
 
-  /@types/react@18.2.45:
-    resolution: {integrity: sha512-TtAxCNrlrBp8GoeEp1npd5g+d/OejJHFxS3OWmrPBMFaVQMSN0OFySozJio5BHxTuTeug00AVXVAjfDSfk+lUg==}
+  /@types/react@18.2.46:
+    resolution: {integrity: sha512-nNCvVBcZlvX4NU1nRRNV/mFl1nNRuTuslAJglQsq+8ldXe5Xv0Wd2f7WTE3jOxhLH2BFfiZGC6GCp+kHQbgG+w==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -6789,8 +6789,8 @@ packages:
       - terser
     dev: false
 
-  /vite-tsconfig-paths@4.2.2(typescript@5.3.3)(vite@5.0.10):
-    resolution: {integrity: sha512-dq0FjyxHHDnp0uS3P12WEOX2W7NeuLzX9AWP38D7Zw2CTbFErapwQVlCiT5DMJcVWKQ1MMdTe92PZl/rBQ7qcw==}
+  /vite-tsconfig-paths@4.2.3(typescript@5.3.3)(vite@5.0.10):
+    resolution: {integrity: sha512-xVsA2xe6QSlzBujtWF8q2NYexh7PAUYfzJ4C8Axpe/7d2pcERYxuxGgph9F4f0iQO36g5tyGq6eBUYIssdUrVw==}
     peerDependencies:
       vite: '*'
     peerDependenciesMeta:
