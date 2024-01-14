@@ -1,0 +1,9 @@
+PUT localhost:8080/events/1
+Content-Type: application/json
+
+{
+  "name": "Test Event",
+  "description": "Event description",
+  "location": "Event location",
+  "dateTime": "2031-01-01T15:30:00.000Z"
+}
