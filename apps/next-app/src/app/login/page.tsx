@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 
-async function login(formData: FormData) {
+function login(formData: FormData) {
   'use server';
 
   const username = formData.get('username');

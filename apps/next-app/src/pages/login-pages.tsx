@@ -25,13 +25,20 @@ export default function () {
       method: 'POST',
     });
 
-    const data = await response.json();
+    const data = (await response.json()) as string;
 
     console.info(data);
   };
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="grid gap-4"
+      onSubmit={event => {
+        handleSubmit(event).catch(error => {
+          console.error(error);
+        });
+      }}
+    >
       <label htmlFor="username">
         Username:{' '}
         <input

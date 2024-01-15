@@ -99,7 +99,7 @@ export default async function Home({
             searchParams,
             'posts',
             String(postPage - 1),
-          )}`}
+          ).toString()}`}
         >
           Previous
         </Link>
@@ -110,7 +110,7 @@ export default async function Home({
             searchParams,
             'posts',
             String(postPage + 1),
-          )}`}
+          ).toString()}`}
         >
           Next
         </Link>
@@ -132,7 +132,7 @@ export default async function Home({
             searchParams,
             'comments',
             String(commentPage - 1),
-          )}`}
+          ).toString()}`}
         >
           Previous
         </Link>
@@ -143,7 +143,7 @@ export default async function Home({
             searchParams,
             'comments',
             String(commentPage + 1),
-          )}`}
+          ).toString()}`}
         >
           Next
         </Link>

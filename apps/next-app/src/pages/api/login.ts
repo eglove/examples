@@ -8,7 +8,7 @@ export default function handler(
     return response.status(500).json({ error: 'Invalid method' });
   }
 
-  const data = JSON.parse(request.body) as {
+  const data = JSON.parse(request.body as string) as {
     password: string;
     username: string;
   };

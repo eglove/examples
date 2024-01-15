@@ -17,5 +17,7 @@ export function getNextPageProperties<T>(cacheKey: string) {
     return;
   }
 
-  return JSON.parse(content).props.pageProps[cacheKey] as T;
+  return (
+    JSON.parse(content) as { props: { pageProps: Record<string, unknown> } }
+  ).props.pageProps[cacheKey] as T;
 }
