@@ -16,7 +16,7 @@
     "@ethang/util": "^3.1.1",
     "@faker-js/faker": "^8.3.1",
     "@types/node": "20.11.0",
-    "eslint-config-ethang": "^11.7.7",
+    "eslint-config-ethang": "^11.7.8",
     "typescript": "5.3.3",
     "vitest": "^1.2.0"
   }
