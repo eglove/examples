@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 
-function login(formData: FormData) {
+// eslint-disable-next-line @typescript-eslint/require-await
+async function login(formData: FormData) {
   'use server';
 
   const username = formData.get('username');
@@ -17,6 +18,7 @@ export default function () {
   return (
     <>
       {token !== undefined && <p>{token?.value}</p>}
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form action={login} className="grid gap-4">
         <label htmlFor="username">
           Username:{' '}
