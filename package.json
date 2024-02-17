@@ -8,7 +8,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.22",
+    "@ethang/project-builder": "^1.1.24",
     "@turbo/gen": "^1.12.4",
     "eslint": "^8.56.0",
     "turbo": "^1.12.4"
