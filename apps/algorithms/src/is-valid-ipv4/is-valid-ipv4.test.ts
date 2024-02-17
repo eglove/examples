@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { isValidIpv4, isValidIpv4Regex } from './is-valid-ipv4';
 
-const testCases: Array<[string, boolean]> = [
+const testCases: [string, boolean][] = [
   ['1.2.3.4', true],
   ['123.45.67.89', true],
   ['1.2.3', false],

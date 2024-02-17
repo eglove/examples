@@ -5,7 +5,8 @@ export default function handler(
   response: NextApiResponse,
 ) {
   if (request.method !== 'POST') {
-    return response.status(500).json({ error: 'Invalid method' });
+    response.status(500).json({ error: 'Invalid method' });
+    return;
   }
 
   const data = JSON.parse(request.body as string) as {
@@ -24,5 +25,5 @@ export default function handler(
     );
   }
 
-  return response.json({ password, username });
+  response.json({ password, username });
 }

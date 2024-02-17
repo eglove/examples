@@ -6,7 +6,7 @@ import {
   missingLetterSet,
 } from './missing-letter';
 
-const testCases: Array<[string[], string]> = [
+const testCases: [string[], string][] = [
   [['a', 'b', 'c', 'e'], 'd'],
   [['X', 'Z'], 'Y'],
   [['m', 'n', 'o', 'q', 'r'], 'p'],

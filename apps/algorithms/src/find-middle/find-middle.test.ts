@@ -3,7 +3,7 @@ import { assert, describe, it } from 'vitest';
 import { LinkedList } from '../linked-list';
 import { findMiddle, findMiddleFastSlowPointer } from './find-middle';
 
-const testCases: Array<[number[], number]> = [
+const testCases: [number[], number][] = [
   [[1, 2, 3, 4, 5], 3],
   [[1, 2, 3, 4, 4, 6], 4],
 ];

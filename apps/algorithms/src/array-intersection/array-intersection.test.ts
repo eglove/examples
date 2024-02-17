@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { arrayIntersection, arrayIntersectionSet } from './array-intersection';
 
-const testCases: Array<[number[], number[], number[]]> = [
+const testCases: [number[], number[], number[]][] = [
   [
     [1, 2, 3, 4, 5],
     [3, 4, 5, 6, 7],

@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { validatePassword, validatePasswordRegex } from './validate-password';
 
-const testCases: Array<[string, boolean]> = [
+const testCases: [string, boolean][] = [
   ['Abc12345', true],
   ['password123', false],
   ['Pass', false],

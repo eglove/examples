@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { validAnagrams, validAnagramsSort } from './valid-anagrams';
 
-const testCases: Array<[string, string, boolean]> = [
+const testCases: [string, string, boolean][] = [
   ['listen', 'silent', true],
   ['hello', 'world', false],
   ['astronomer', 'moonstarer', true],

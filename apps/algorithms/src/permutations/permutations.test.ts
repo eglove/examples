@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { permutationsOptimized, permutationsRecursive } from './permutations';
 
-const testCases: Array<[string, string[]]> = [
+const testCases: [string, string[]][] = [
   ['abc', ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']],
   ['dog', ['dgo', 'dog', 'gdo', 'god', 'odg', 'ogd']],
 ];

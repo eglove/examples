@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { anagramGrouping } from './anagram-grouping';
 
-const testCases: Array<[string[], string[][]]> = [
+const testCases: [string[], string[][]][] = [
   [
     ['cat', 'act', 'dog', 'god', 'tac'],
     [

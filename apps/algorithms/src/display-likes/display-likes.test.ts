@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { displayLikes } from './display-likes';
 
-const testCases: Array<[string[], string]> = [
+const testCases: [string[], string][] = [
   [[], 'no one likes this'],
   [['Peter'], 'Peter likes this'],
   [['Max', 'John', 'Mark'], 'Max, John, and Mark like this'],

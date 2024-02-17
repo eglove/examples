@@ -1,5 +1,5 @@
 export class Stack<Type> {
-  private readonly _stack: Array<Type> = [];
+  private readonly _stack: Type[] = [];
 
   public push(value: Type): void {
     this._stack.push(value);

@@ -5,7 +5,7 @@ import {
   generateHashtagRegexReplace,
 } from './generate-hashtag';
 
-const testCases: Array<[string, string | boolean]> = [
+const testCases: [string, boolean | string][] = [
   ['JavaScript is awesome', '#JavaScriptIsAwesome'],
   ['hello world', '#HelloWorld'],
   [

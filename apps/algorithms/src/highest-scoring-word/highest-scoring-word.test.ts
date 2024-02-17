@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { highestScoringWord } from './highest-scoring-word';
 
-const testCases: Array<[string, string]> = [
+const testCases: [string, string][] = [
   ['man i need a taxi up to ubud', 'taxi'],
   ['what time are we climbing up the volcano', 'volcano'],
   ['take me to semynak', 'semynak'],

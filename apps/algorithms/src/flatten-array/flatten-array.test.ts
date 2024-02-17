@@ -2,9 +2,9 @@ import { assert, describe, it } from 'vitest';
 
 import { flattenArray, flattenArrayBuiltIn } from './flatten-array';
 
-export type NestedArray<T> = T | Array<T> | Array<NestedArray<T>>;
+export type NestedArray<T> = NestedArray<T>[] | T | T[];
 
-const testCases: Array<[NestedArray<number>, number[]]> = [
+const testCases: [NestedArray<number>, number[]][] = [
   [
     [1, [2, 3], [4, 5, [6]]],
     [1, 2, 3, 4, 5, 6],

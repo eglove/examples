@@ -3,7 +3,7 @@ import { assert, describe, it } from 'vitest';
 import type { Analysis, Car } from './analyze-car-mileage';
 import { analyzeCarMileage } from './analyze-car-mileage';
 
-const testCases: Array<[Car[], Analysis]> = [
+const testCases: [Car[], Analysis][] = [
   [
     [
       { make: 'Toyota', mileage: 25_000, model: 'Corolla', year: 2020 },

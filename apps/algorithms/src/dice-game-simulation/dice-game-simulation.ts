@@ -1,4 +1,4 @@
-type Result = 'win' | 'lose' | 'roll again';
+type Result = 'lose' | 'roll again' | 'win';
 
 type Simulation = {
   dice1: number;

@@ -5,7 +5,7 @@ import type { JSX } from 'react';
 
 type ServerPropertes = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Record<string, string[] | string | undefined>;
 };
 
 type Post = {
@@ -70,9 +70,9 @@ export default async function Home({
   );
   let comments = (await commentResponse.json()) as Comment[];
 
-  const postPage = (betterNumber(searchParams?.posts).number as number) ?? 1;
+  const postPage = (betterNumber(searchParams.posts).number as number) ?? 1;
   const commentPage =
-    (betterNumber(searchParams?.comments).number as number) ?? 1;
+    (betterNumber(searchParams.comments).number as number) ?? 1;
 
   posts = posts.slice(postPage * 3, postPage * 3 + 3);
   comments = comments.slice(commentPage * 3, commentPage * 3 + 3);

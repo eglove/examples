@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { isBalanced, isBalancedArray } from './balanced-parentheses';
 
-const testCases: Array<[string, boolean]> = [
+const testCases: [string, boolean][] = [
   ['()', true],
   ['()()', true],
   ['(()())', true],

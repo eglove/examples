@@ -1,5 +1,5 @@
-export function fizzBuzz(number: number): Array<string | number> {
-  let result: Array<string | number> = [];
+export function fizzBuzz(number: number): (number | string)[] {
+  let result: (number | string)[] = [];
 
   for (let index = 1; index <= number; index++) {
     let string = '';
@@ -20,8 +20,8 @@ export function fizzBuzz(number: number): Array<string | number> {
 
 export function fizzBuzzLeastCommonDenominator(
   number: number,
-): Array<string | number> {
-  let result: Array<string | number> = [];
+): (number | string)[] {
+  let result: (number | string)[] = [];
 
   for (let index = 1; index <= number; index++) {
     switch (0) {

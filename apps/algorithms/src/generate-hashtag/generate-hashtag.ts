@@ -1,4 +1,4 @@
-export function generateHashtag(string: string): string | boolean {
+export function generateHashtag(string: string): boolean | string {
   if (string.length > 140 || string === '') {
     return false;
   }
@@ -19,7 +19,7 @@ export function generateHashtag(string: string): string | boolean {
   return `#${hashtag}`;
 }
 
-export function generateHashtagRegexReplace(string: string): string | boolean {
+export function generateHashtagRegexReplace(string: string): boolean | string {
   const trimmed = string.trim().replaceAll(/\s+/g, ' ');
 
   if (trimmed.length > 140 || trimmed === '') {

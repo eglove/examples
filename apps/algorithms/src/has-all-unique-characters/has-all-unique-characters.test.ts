@@ -6,7 +6,7 @@ import {
   hasAllUniqueCharactersSizeCompare,
 } from './has-all-unique-characters';
 
-const testCases: Array<[string, boolean]> = [
+const testCases: [string, boolean][] = [
   ['abcdefg', true],
   ['abcdefgA', true],
   ['programming', false],

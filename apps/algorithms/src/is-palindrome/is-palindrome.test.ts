@@ -7,7 +7,7 @@ import {
   isPalindromeStack,
 } from './is-palindrome';
 
-const testCases: Array<[string, boolean]> = [
+const testCases: [string, boolean][] = [
   ['madam', true],
   ['racecar', true],
   ['hello', false],

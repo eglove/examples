@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { fizzBuzz, fizzBuzzLeastCommonDenominator } from './fizz-buzz';
 
-const testCases: Array<[number, Array<string | number>]> = [
+const testCases: [number, (number | string)[]][] = [
   [5, [1, 2, 'Fizz', 4, 'Buzz']],
   [
     15,

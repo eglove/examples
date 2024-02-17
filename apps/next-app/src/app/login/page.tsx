@@ -17,7 +17,7 @@ export default function () {
 
   return (
     <>
-      {token !== undefined && <p>{token?.value}</p>}
+      {token !== undefined && <p>{token.value}</p>}
       {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form action={login} className="grid gap-4">
         <label htmlFor="username">

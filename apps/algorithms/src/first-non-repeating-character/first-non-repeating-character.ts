@@ -18,7 +18,7 @@ export function firstNonRepeatingCharacter(string: string): string | null {
 }
 
 export function firstNonRepeatingCharacterMap(string: string): string | null {
-  const found: Map<string, number> = new Map();
+  const found = new Map<string, number>();
 
   for (const character of string) {
     found.set(character, (found.get(character) ?? 0) + 1);

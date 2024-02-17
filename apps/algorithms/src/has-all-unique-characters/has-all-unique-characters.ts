@@ -12,8 +12,10 @@ export function hasAllUniqueCharacters(string: string): boolean {
   return true;
 }
 
-// Slowest, creating a Set requires looping over the entire array, both other methods
-// have early returns and roughly the same performance
+/*
+ * Slowest, creating a Set requires looping over the entire array, both other methods
+ * have early returns and roughly the same performance
+ */
 export function hasAllUniqueCharactersSizeCompare(string: string): boolean {
   return new Set(string).size === string.length;
 }

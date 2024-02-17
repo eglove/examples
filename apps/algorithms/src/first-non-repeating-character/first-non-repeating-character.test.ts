@@ -5,7 +5,7 @@ import {
   firstNonRepeatingCharacterMap,
 } from './first-non-repeating-character';
 
-const testCases: Array<[string, string | null]> = [
+const testCases: [string, string | null][] = [
   ['aabccdeff', 'b'],
   ['aabbcc', null],
   ['abcdef', 'a'],

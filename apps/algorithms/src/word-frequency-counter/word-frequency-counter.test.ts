@@ -2,7 +2,7 @@ import { assert, describe, it } from 'vitest';
 
 import { wordFrequencyCounter } from './word-frequency-counter';
 
-const testCases: Array<[string, Map<string, number>]> = [
+const testCases: [string, Map<string, number>][] = [
   [
     'The quick brown fox jumps over the lazy dog.',
     new Map([

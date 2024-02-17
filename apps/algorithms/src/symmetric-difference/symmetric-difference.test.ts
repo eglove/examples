@@ -5,7 +5,7 @@ import {
   symmetricDifferenceFilter,
 } from './symmetric-difference';
 
-const testCases: Array<[number[], number[], number[]]> = [
+const testCases: [number[], number[], number[]][] = [
   [
     [1, 2, 3],
     [3, 4, 5],

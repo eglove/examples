@@ -3,7 +3,7 @@ import { assert, describe, it } from 'vitest';
 import type { Product } from './calculate-total-sales';
 import { calculateTotalSales } from './calculate-total-sales';
 
-const testCases: Array<[Product[], number, number]> = [
+const testCases: [Product[], number, number][] = [
   [
     [
       { name: 'Apple', price: 0.5, quantity: 10 },
