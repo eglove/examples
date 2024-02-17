@@ -12,18 +12,18 @@
     "@ethang/util": "^3.1.1",
     "@hyper-fetch/core": "^5.7.4",
     "@hyper-fetch/react": "^5.7.4",
-    "next": "14.0.4",
+    "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20.11.3",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "autoprefixer": "^10.0.1",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
-    "eslint-config-next": "14.0.4",
-    "postcss": "^8.4.33",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
