@@ -10,12 +10,12 @@
   "devDependencies": {
     "@ethang/project-builder": "^1.1.25",
     "@turbo/gen": "^1.12.4",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "turbo": "^1.12.4"
   },
   "packageManager": "pnpm@8.6.10",
   "name": "examples",
   "dependencies": {
-    "eslint-config-ethang": "^14.0.10"
+    "eslint-config-ethang": "^14.0.11"
   }
 }
