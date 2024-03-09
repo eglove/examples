@@ -9,9 +9,9 @@
   },
   "devDependencies": {
     "@ethang/project-builder": "^1.1.25",
-    "@turbo/gen": "^1.12.4",
+    "@turbo/gen": "^1.12.5",
     "eslint": "^8.57.0",
-    "turbo": "^1.12.4"
+    "turbo": "^1.12.5"
   },
   "packageManager": "pnpm@8.6.10",
   "name": "examples",
