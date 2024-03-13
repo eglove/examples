@@ -8,7 +8,7 @@
     "test": "turbo run test"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.25",
+    "@ethang/project-builder": "^1.1.26",
     "@turbo/gen": "^1.12.5",
     "eslint": "^8.57.0",
     "turbo": "^1.12.5"
@@ -16,6 +16,6 @@
   "packageManager": "pnpm@8.6.10",
   "name": "examples",
   "dependencies": {
-    "eslint-config-ethang": "^14.0.12"
+    "eslint-config-ethang": "^14.1.0"
   }
 }
